@@ -1,6 +1,0 @@
-[submodule "Orca"]
-	path = Orca
-	url = https://git@github.com:metasyn/Orca.git
-[submodule "Enfer"]
-	path = Enfer
-	url = https://git@github.com:metasyn/Enfer.git

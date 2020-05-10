@@ -15,3 +15,14 @@ window.addEventListener('load', function () {
 
   orcaClient.io.midi.outputDevice = () => enferBridge
 })
+
+
+function toggle(id) {
+  var x = document.getElementById(id);
+  debugger;
+  if (!x.style.display || x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}

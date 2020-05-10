@@ -26,7 +26,82 @@
         </div>
         <div class="row">
           <div class="col">
-            The current site patches Orca's midi to map automatically to a synthesizer/sampler called <a href="https://github.com/neauoire/Enfer">enfer</a>.
+            Table of Contents:
+
+            <ul>
+              <li><a href="#navigation">navigation</a></li>
+              <li><a href="#contents">concepts</a></li>
+              <li><a href="#glossary">glossary</a></li>
+            </ul>
+          </div>
+
+          <div class="col">
+            <h2 id="navigation">navigation</h2>
+            <p>Orca can be navigated a number of ways. You can try clicking a particular coordinate on the grid, or use the arrow keys to move the cursor around. Conveniently, you can also see a lot of navigational commands by opening the javascript console. When Orca starts, it prints out a number of commands:
+            </p>
+
+
+            <h3>movement</h3>
+            <pre>
+              <code>
+                Move North............... ArrowUp
+                Move East................ ArrowRight
+                Move South............... ArrowDown
+                Move West................ ArrowLeft
+                Move North(Leap)......... CmdOrCtrl+ArrowUp
+                Move East(Leap).......... CmdOrCtrl+ArrowRight
+                Move South(Leap)......... CmdOrCtrl+ArrowDown
+                Move West(Leap).......... CmdOrCtrl+ArrowLeft
+              </code>
+            </pre>
+
+            <h3>selection</h3>
+            <p>Orca also has the concept of a selection. You can hold down shift to make it larger. </p>
+
+            <pre>
+              <code>
+                Scale North.............. Shift+ArrowUp
+                Scale East............... Shift+ArrowRight
+                Scale South.............. Shift+ArrowDown
+                Scale West............... Shift+ArrowLeft
+                Scale North(Leap)........ CmdOrCtrl+Shift+ArrowUp
+                Scale East(Leap)......... CmdOrCtrl+Shift+ArrowRight
+                Scale South(Leap)........ CmdOrCtrl+Shift+ArrowDown
+                Scale West(Leap)......... CmdOrCtrl+Shift+ArrowLeftl
+              </code>
+            </pre>
+
+            <h3>cursor</h3>
+            Lastly, there is a concept of a cursor mode, kind of like VIM. Normally, typing will only edit value under the head of the cursor (the @ sign). If you switch to insert mode, you can type and the cursor head will auto advance.
+            <pre>
+              <code>
+                Toggle Insert Mode....... CmdOrCtrl+I
+                Toggle Block Comment..... CmdOrCtrl+/
+                Trigger Operator......... CmdOrCtrl+P
+                Reset.................... Escape
+              </code>
+            </pre>
+          </div>
+
+          <div class="col">
+            <h2 id="concepts">concepts</h2>
+            <p>
+              Orca utilizes a unique base-36 number system:
+            </p>
+            <ul>
+              <li>0-9: normal</li>
+              <li>a-z: 10-35</li>
+            </ul>
+
+            <p>
+              Orca has a few distinct types of components that are worth calling out:
+            </p>
+
+            <ul>
+              <li>operators</li>
+              <li>values</li>
+              <li>messages</li>
+            </ul>
           </div>
         </div>
       </div>

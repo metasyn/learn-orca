@@ -4,10 +4,14 @@
 /* -------------------- */
 
 :root {
-  --main-color: #7FE3C8;        /* orca mint */
-  --secondary-color: 	#7F9AE3;
-  --hover-color: #E37F9A;    /* ichigo joy */
+  --color-main: #7FE3C8;            /* orca mint */
+  --color-complement: #E37F9A;      /* pink */
+  --color-contrast: #549EC3;        /* blue */
+
+  --color-low: #2BA07F;
+
   --min-width: 64em;
+
 }
 
 
@@ -37,8 +41,9 @@
 	border-collapse: collapse;
 }
 .col {
-	border: 6px double var(--main-color);
+	border: 3px solid var(--color-main);
 	padding: 1em;
+  margin: 1em;
 }
 
 /* -------------------- */
@@ -47,7 +52,7 @@
 
 #navbar {
 	overflow: hidden;
-	background-color: var(--main-color);
+	background-color: var(--color-main);
 	color: #222;
 	z-index: 99;
 	position: relative;
@@ -58,7 +63,7 @@
 }
 
 #navbar a:hover {
-	background-color: #f93;
+	background-color: var(--color-complement);
 }
 
 
@@ -76,34 +81,44 @@
 /* standard elements   */
 /* -------------------- */
 
-input[type="text"],
-textarea {
-	background-color: #333;
-	color: darkorange;
+
+pre {
+  white-space: pre-line;
+  border: 1px;
+  border-style: solid;
+  border-color: #FFF;
 }
 
-code > span.fl {
- color: #008000;
+
+code {
+  display: block;
+  padding: 10px;
 }
 
 
 a {
 	text-decoration: none;
-	color: var(--secondary-color);
+	color: var(--color-contrast);
 	font-weight: bold;
 	padding-right: 0.25em;
 }
 
-a:hover {color: var(--hover-color);}
+a:hover {color: var(--color-complement);}
 
 
 hr {
-	border-color: var(--main-color);
+    margin-top: 15px;
+    border: none;
+    border-top: 3px double #FFF;
+    overflow: visible;
+    text-align: center;
+    height: 5px;
 }
+
 
 h1 {
 	text-transform: uppercase;
-		color: var(--main-color);
+		color: var(--color-main);
 		font-family: 'input_mono_medium';
 }
 
@@ -125,8 +140,9 @@ body {
 	padding: 1em;
   width: 50%;
 	max-width: 45%;
+  font-size: 14px;
 
-	color: var(--main-color);
+	color: var(--color-main);
 	background: #000;
 
 	font-family: "input_mono_medium";
@@ -167,6 +183,9 @@ body {
   height: 100%;
 }
 
+.lesson {
+  display: None;
+}
 
 
 /* -------------------- */

@@ -3,8 +3,15 @@
 
 # setup
 
-Pull in [ORCΛ](https://github.com/hundredrabbits/orca.git)
+Requires [pandoc](https://pandoc.org)
+
 ```
-git submodule init
 git submodule update
 ```
+
+To make the sections:
+```
+make pandoc
+```
+
+

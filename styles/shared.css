@@ -59,7 +59,8 @@
 .grid {
 	border-collapse: collapse;
 }
-.col {
+
+.level1, .level2 {
 	border: 3px solid var(--color-main);
 	padding: 1em;
   margin: 1em;
@@ -142,9 +143,14 @@ h1 {
 }
 
 h2, h3 {
+  margin: auto;
   color: var(--color-complement);
 }
 
+
+p {
+  margin: 0.75em;
+}
 
 .content {
 	padding-top: 5px;

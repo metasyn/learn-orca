@@ -1,0 +1,203 @@
+<div>
+  <ul>
+  <li><a href="#about">about</a></li>
+  <li><a href="#navigation">navigation</a>
+  <ul>
+  <li><a href="#movement">movement</a></li>
+  <li><a href="#selection">selection</a></li>
+  <li><a href="#cursor">cursor</a></li>
+  </ul></li>
+  <li><a href="#concepts">concepts</a>
+  <ul>
+  <li><a href="#base36-numbers">base36 numbers</a></li>
+  <li><a href="#operators">operators</a></li>
+  </ul></li>
+  <li><a href="#timing">timing</a>
+  <ul>
+  <li><a href="#clock">clock</a></li>
+  <li><a href="#frames">frames</a></li>
+  <li><a href="#tempo">tempo</a></li>
+  <li><a href="#section"></a></li>
+  </ul></li>
+  </ul>
+  <section id="about" class="level2">
+  <h2>about</h2>
+  <p>Orca is an esoteric programming language, designed to create procedural sequencers in which each letter of the alphabet is an operation, where lowercase letters operate on bang, uppercase letters operate each frame. It was created by <a href="https://100r.co/site/home.html">hundred rabbits</a>, a research studio on a sailboat.</p>
+  <p>Orca is not a synthesizer, but a flexible livecoding environment capable of sending MIDI, OSC &amp; UDP to your audio/visual interfaces, like Ableton, Renoise, VCV Rack or SuperCollider.</p>
+  <p>For the purposes of this site, we’ve connected some drum racks and synthesizers from <a href="https://github.com/neauoire/Enfer">Enfer</a> in the bottom right and are patching them in as virtualized midi instruments. Normally, Orca will not make sound on its own, and rather just sends messages or data to external devices or programs. Orca and Enfer are both creations of <a href="https://wiki.xxiivv.com/site/home.html">Devine Lu Linvega</a>.</p>
+  </section>
+  <section id="navigation" class="level2">
+  <h2>navigation</h2>
+  <p>Orca can be navigated a number of ways. You can try clicking a particular coordinate on the grid, or use the arrow keys to move the cursor around. Conveniently, you can also see a lot of navigational commands by opening the javascript console. When Orca starts, it prints out a number of commands:</p>
+  <section id="movement" class="level3">
+  <h3>movement</h3>
+  <pre><code>Move North............... ArrowUp
+  Move East................ ArrowRight
+  Move South............... ArrowDown
+  Move West................ ArrowLeft
+  Move North(Leap)......... CmdOrCtrl+ArrowUp
+  Move East(Leap).......... CmdOrCtrl+ArrowRight
+  Move South(Leap)......... CmdOrCtrl+ArrowDown
+  Move West(Leap).......... CmdOrCtrl+ArrowLeft</code></pre>
+  </section>
+  <section id="selection" class="level3">
+  <h3>selection</h3>
+  <p>Orca also has the concept of a selection. You can hold down shift to make it larger.</p>
+  <pre><code>Scale North.............. Shift+ArrowUp
+  Scale East............... Shift+ArrowRight
+  Scale South.............. Shift+ArrowDown
+  Scale West............... Shift+ArrowLeft
+  Scale North(Leap)........ CmdOrCtrl+Shift+ArrowUp
+  Scale East(Leap)......... CmdOrCtrl+Shift+ArrowRight
+  Scale South(Leap)........ CmdOrCtrl+Shift+ArrowDown
+  Scale West(Leap)......... CmdOrCtrl+Shift+ArrowLeftl</code></pre>
+  </section>
+  <section id="cursor" class="level3">
+  <h3>cursor</h3>
+  <p>Lastly, there is a concept of a cursor mode, kind of like VIM. Normally, typing will only edit value under the head of the cursor (the @ sign). If you switch to insert mode, you can type and the cursor head will auto advance.</p>
+  <pre><code>Toggle Insert Mode....... CmdOrCtrl+I
+  Toggle Block Comment..... CmdOrCtrl+/
+  Trigger Operator......... CmdOrCtrl+P
+  Reset.................... Escape</code></pre>
+  </section>
+  </section>
+  <section id="concepts" class="level2">
+  <h2>concepts</h2>
+  <section id="base36-numbers" class="level3">
+  <h3>base36 numbers</h3>
+  <p>Orca utilizes a unique base-36 number system:</p>
+  <ul>
+  <li>0-9: normal</li>
+  <li>a-z: 10-35</li>
+  </ul>
+  <p>Here is a table to make it clear:</p>
+  <table>
+  <thead>
+  <tr class="header">
+  <th style="text-align: center;"><strong>0</strong></th>
+  <th style="text-align: center;"><strong>1</strong></th>
+  <th style="text-align: center;"><strong>2</strong></th>
+  <th style="text-align: center;"><strong>3</strong></th>
+  <th style="text-align: center;"><strong>4</strong></th>
+  <th style="text-align: center;"><strong>5</strong></th>
+  <th style="text-align: center;"><strong>6</strong></th>
+  <th style="text-align: center;"><strong>7</strong></th>
+  <th style="text-align: center;"><strong>8</strong></th>
+  <th style="text-align: center;"><strong>9</strong></th>
+  <th style="text-align: center;"><strong>A</strong></th>
+  <th style="text-align: center;"><strong>B</strong></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="odd">
+  <td style="text-align: center;">0</td>
+  <td style="text-align: center;">1</td>
+  <td style="text-align: center;">2</td>
+  <td style="text-align: center;">3</td>
+  <td style="text-align: center;">4</td>
+  <td style="text-align: center;">5</td>
+  <td style="text-align: center;">6</td>
+  <td style="text-align: center;">7</td>
+  <td style="text-align: center;">8</td>
+  <td style="text-align: center;">9</td>
+  <td style="text-align: center;">10</td>
+  <td style="text-align: center;">11</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: center;"><strong>C</strong></td>
+  <td style="text-align: center;"><strong>D</strong></td>
+  <td style="text-align: center;"><strong>E</strong></td>
+  <td style="text-align: center;"><strong>F</strong></td>
+  <td style="text-align: center;"><strong>G</strong></td>
+  <td style="text-align: center;"><strong>H</strong></td>
+  <td style="text-align: center;"><strong>I</strong></td>
+  <td style="text-align: center;"><strong>J</strong></td>
+  <td style="text-align: center;"><strong>K</strong></td>
+  <td style="text-align: center;"><strong>L</strong></td>
+  <td style="text-align: center;"><strong>M</strong></td>
+  <td style="text-align: center;"><strong>N</strong></td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: center;">12</td>
+  <td style="text-align: center;">13</td>
+  <td style="text-align: center;">14</td>
+  <td style="text-align: center;">15</td>
+  <td style="text-align: center;">16</td>
+  <td style="text-align: center;">17</td>
+  <td style="text-align: center;">18</td>
+  <td style="text-align: center;">19</td>
+  <td style="text-align: center;">20</td>
+  <td style="text-align: center;">21</td>
+  <td style="text-align: center;">22</td>
+  <td style="text-align: center;">23</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: center;"><strong>O</strong></td>
+  <td style="text-align: center;"><strong>P</strong></td>
+  <td style="text-align: center;"><strong>Q</strong></td>
+  <td style="text-align: center;"><strong>R</strong></td>
+  <td style="text-align: center;"><strong>S</strong></td>
+  <td style="text-align: center;"><strong>T</strong></td>
+  <td style="text-align: center;"><strong>U</strong></td>
+  <td style="text-align: center;"><strong>V</strong></td>
+  <td style="text-align: center;"><strong>W</strong></td>
+  <td style="text-align: center;"><strong>X</strong></td>
+  <td style="text-align: center;"><strong>Y</strong></td>
+  <td style="text-align: center;"><strong>Z</strong></td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: center;">24</td>
+  <td style="text-align: center;">25</td>
+  <td style="text-align: center;">26</td>
+  <td style="text-align: center;">27</td>
+  <td style="text-align: center;">28</td>
+  <td style="text-align: center;">29</td>
+  <td style="text-align: center;">30</td>
+  <td style="text-align: center;">31</td>
+  <td style="text-align: center;">32</td>
+  <td style="text-align: center;">33</td>
+  <td style="text-align: center;">34</td>
+  <td style="text-align: center;">35</td>
+  </tr>
+  </tbody>
+  </table>
+  <p>Anytime you want to give a numeric value, you can give a letter as well.</p>
+  </section>
+  <section id="operators" class="level3">
+  <h3>operators</h3>
+  <p>Operators are mostly letters, and a few symbols. An operator takes up one cell in the grid. Most operators have some type of input or output on one of their adjacent tiles. Some operators are capable of moving; others stay put. You can see a guide referencing the operators by pressing <code>CmdOrCtrl+G</code></p>
+  </section>
+  </section>
+  <section id="timing" class="level2">
+  <h2>timing</h2>
+  <p>Orca has a few relevant components related to timing:</p>
+  <ul>
+  <li>clock</li>
+  <li>frames</li>
+  <li>tempo</li>
+  </ul>
+  <section id="clock" class="level3">
+  <h3>clock</h3>
+  <p>The clock can be started and stop with the spacebar. If a midi device is contected as an input, the clock will be set from the midi device, and Orca will respond to midi start and stop messages.</p>
+  </section>
+  <section id="frames" class="level3">
+  <h3>frames</h3>
+  <p>For each tick of the clock, we move forward a frame. Frames can be skiped or rewinded with an Orca command if needed, too. The current frame number can be seen in the bottom right of the window.</p>
+  </section>
+  <section id="tempo" class="level3">
+  <h3>tempo</h3>
+  <p>The tempo, as expected, determines the BPM and rate that the clock will tick. There are some relevant shortcuts as well:</p>
+  <pre><code>Frame By Frame........... CmdOrCtrl+F
+  Reset Frame.............. CmdOrCtrl+Shift+R
+  Incr. Speed.............. &amp;gt;
+  Decr. Speed.............. &amp;lt;
+  Incr. Speed(10x)......... CmdOrCtrl+&amp;gt;
+  Decr. Speed(10x)......... CmdOrCtrl+&amp;lt;</code></pre>
+  </section>
+  <section id="section" class="level3">
+  <h3></h3>
+  <p>made by <a href="https://metasyn.github.io">metasyn</a></p>
+  <!-- LINKS -->
+  </section>
+  </section>
+<div>

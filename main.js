@@ -2,6 +2,7 @@
 
 window.addEventListener("load", function () {
   console.log("Patching Orca <--> Enfer!");
+
   const orcaClient = document.getElementById("orca-iframe").contentWindow
     .orcaClient;
   const enferClient = document.getElementById("enfer-iframe").contentWindow

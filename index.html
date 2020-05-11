@@ -10,19 +10,29 @@
   <body>
 
     <div id="navbar">
-      <a href="/">HOME</a>
       <a href="https://hundredrabbits.itch.io/orca">ORCΛ</a>
+      <a href="#glossary">glossary</a>
+      <a href="#operators">operators</a>
+      <a href="#faq">faq</a>
     </div>
 
     <div class="content">
 
-      <h1 id="fancyboi">Let's learn ORCΛ</h1>
+      <h1 id="fancyboi">LEARN ORCΛ</h1>
 
       <div class="grid">
         <div class="row">
           <div class="col">
-            Orca is an esoteric programming language, designed to create procedural sequencers in which each letter of the alphabet is an operation, where lowercase letters operate on bang, uppercase letters operate each frame.
-          </div>
+            <p>
+            Orca is an esoteric programming language, designed to create procedural sequencers in which each letter of the alphabet is an operation, where lowercase letters operate on bang, uppercase letters operate each frame. It was created by <a href="https://100r.co/site/home.html">hundred rabbits</a>, a research studio on a sailboat.
+            </p>
+
+            <p>
+              Orca is not a synthesizer, but a flexible livecoding environment capable of sending MIDI, OSC & UDP to your audio/visual interfaces, like Ableton, Renoise, VCV Rack or SuperCollider.
+            </p>
+            <p>
+            For the purposes of this site, we've connected some drum racks and synthesizers from <a href="https://github.com/neauoire/Enfer">Enfer</a> in the bottom right and are patching them in as virtualized midi instruments. Normally, Orca will not make sound on its own, and rather just sends messages or data to external devices or programs. Orca and Enfer are both creations of <a href="https://wiki.xxiivv.com/site/home.html">Devine Lu Linvega</a>.
+
         </div>
         <div class="row">
           <div class="col">
@@ -32,11 +42,14 @@
               <li><a href="#navigation">navigation</a></li>
               <li><a href="#contents">concepts</a></li>
               <li><a href="#glossary">glossary</a></li>
+              <li><a href="#operators">operators</a></li>
+              <li><a href="#timing">timing</a></li>
+              <li><a href="#faq">faq</a></li>
             </ul>
           </div>
 
           <div class="col">
-            <h2 id="navigation">navigation</h2>
+            <a id="navigation"><h2>navigation</h2></a>
             <p>Orca can be navigated a number of ways. You can try clicking a particular coordinate on the grid, or use the arrow keys to move the cursor around. Conveniently, you can also see a lot of navigational commands by opening the javascript console. When Orca starts, it prints out a number of commands:
             </p>
 
@@ -84,7 +97,9 @@
           </div>
 
           <div class="col">
-            <h2 id="concepts">concepts</h2>
+            <a id="concepts"><h2>concepts</h2></a>
+
+            <h3>base36 numbers</h3>
             <p>
               Orca utilizes a unique base-36 number system:
             </p>
@@ -94,14 +109,164 @@
             </ul>
 
             <p>
-              Orca has a few distinct types of components that are worth calling out:
+              Here is a table to make it clear:
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>0</th>
+                  <th>1</th>
+                  <th>2</th>
+                  <th>3</th>
+                  <th>4</th>
+                  <th>5</th>
+                  <th>6</th>
+                  <th>7</th>
+                  <th>8</th>
+                  <th>9</th>
+                  <th>A</th>
+                  <th>B</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td >0</td>
+                  <td >1</td>
+                  <td >2</td>
+                  <td >3</td>
+                  <td >4</td>
+                  <td >5</td>
+                  <td >6</td>
+                  <td >7</td>
+                  <td >8</td>
+                  <td >9</td>
+                  <td >10</td>
+                  <td >11</td>
+                </tr>
+                <tr>
+                  <td>C</td>
+                  <td>D</td>
+                  <td>E</td>
+                  <td>F</td>
+                  <td>G</td>
+                  <td>H</td>
+                  <td>I</td>
+                  <td>J</td>
+                  <td>K</td>
+                  <td>L</td>
+                  <td>M</td>
+                  <td>N</td>
+                </tr>
+                <tr>
+                  <td>12</td>
+                  <td>13</td>
+                  <td>14</td>
+                  <td>15</td>
+                  <td>16</td>
+                  <td>17</td>
+                  <td>18</td>
+                  <td>19</td>
+                  <td>20</td>
+                  <td>21</td>
+                  <td>22</td>
+                  <td>23</td>
+                </tr>
+                <tr>
+                  <td>O</td>
+                  <td>P</td>
+                  <td>Q</td>
+                  <td>R</td>
+                  <td>S</td>
+                  <td>T</td>
+                  <td>U</td>
+                  <td>V</td>
+                  <td>W</td>
+                  <td>X</td>
+                  <td>Y</td>
+                  <td>Z</td>
+                </tr>
+                <tr>
+                  <td>24</td>
+                  <td>25</td>
+                  <td>26</td>
+                  <td>27</td>
+                  <td>28</td>
+                  <td>29</td>
+                  <td>30</td>
+                  <td>31</td>
+                  <td>32</td>
+                  <td>33</td>
+                  <td>34</td>
+                  <td>35</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>
+              Anytime you want to give a numeric value, you can give a letter as well.
             </p>
 
+
+            <h3>operators</h3>
+
+            <p>
+              Operators are mostly letters, and a few symbols. An operator takes up one cell in the grid. Most operators have some type of input or output on one of their adjacent tiles.
+              Some operators are capable of moving; others stay put. You can see a guide referencing the operators by pressing `CmdOrCtrl+G`
+            </p>
+          </div>
+          <div class="col">
+            <a id="#timing"><h2>timing</h2></a>
+
+            <p>
+            Orca has a few relevant conponents related to timing:
+            </p>
             <ul>
-              <li>operators</li>
-              <li>values</li>
-              <li>messages</li>
+              <li>clock</li>
+              <li>frames</li>
+              <li>tempo</li>
             </ul>
+
+            <h3>clock</h3>
+            <p>
+              The clock can be started and stop with the spacebar. If a midi device is contected as an input, the clock will be set from the midi device, and Orca will respond to midi start and stop messages.
+            </p>
+
+            <h3>frames</h3>
+            <p>
+              For each tick of the clock, we move forward a frame. Frames can be skiped or rewinded with an Orca command if needed, too. The current frame number can be seen in the bottom right of the window.
+            </p>
+
+            <h3>tempo</h3>
+            <p>
+              The tempo, as expected, determines the BPM and rate that the clock will tick.
+              There are some relevant shortcuts as well:
+            </p>
+
+            <pre>
+              <code>
+
+                Play/Pause............... Space
+                Frame By Frame........... CmdOrCtrl+F
+                Reset Frame.............. CmdOrCtrl+Shift+R
+                Incr. Speed.............. &gt;
+                Decr. Speed.............. &lt;
+                Incr. Speed(10x)......... CmdOrCtrl+&gt;
+                Decr. Speed(10x)......... CmdOrCtrl+&lt;
+              </code>
+            </pre>
+          </div>
+          <div class="col">
+            <a id="faq"><h2>faq</h2></a>
+              Coming soon!
+          </div>
+          <div class="col">
+            <a id="glossary"><h2>glossary</h2></a>
+              Coming soon!
+          </div>
+          <div class="col">
+            <h2>
+              Made by <a href="https://metasyn.github.io">metasyn</a>
+            </h2>
           </div>
         </div>
       </div>

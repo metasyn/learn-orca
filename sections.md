@@ -1,4 +1,7 @@
+# basics 
+
 ## about
+
 Orca is an esoteric programming language, designed to create
 procedural sequencers in which each letter of the alphabet is an
 operation, where lowercase letters operate on bang, uppercase
@@ -37,8 +40,6 @@ Move West(Leap).......... CmdOrCtrl+ArrowLeft
 ```
 
 ### selection
-
-
 
 Orca also has the concept of a selection. You can hold down
 shift to make it larger.
@@ -131,6 +132,27 @@ Decr. Speed.............. &lt;
 Incr. Speed(10x)......... CmdOrCtrl+&gt;
 Decr. Speed(10x)......... CmdOrCtrl+&lt;
 ```
+
+# operators
+
+## a (add)
+
+The A operator is really simple - it adds the left and right to the bottom.
+
+```
+.....
+.1A2.
+..3..
+```
+
+Inputs
+
+- left: number
+- right: number
+
+Outputs
+
+ - bottom: number
 
 <!-- LINKS -->
 [enfer]: https://github.com/neauoire/Enfer

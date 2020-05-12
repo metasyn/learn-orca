@@ -2,19 +2,18 @@
 
 ## about
 
-Orca is an esoteric programming language, designed to create
+[Orca][orca] is an esoteric programming language, designed to create
 procedural sequencers in which each letter of the alphabet is an
-operation, where lowercase letters operate on bang, uppercase
-letters operate each frame. It was created by
+[operation](#operators), where lowercase letters operate on [bang](#bang), uppercase
+letters operate each [frame](#frame). It was created by
 [hundred rabbits][hundredrabbits], a research studio on a sailboat.
 
 Orca is not a synthesizer, but a flexible livecoding environment
-capable of sending MIDI, OSC & UDP to your audio/visual
+capable of sending [MIDI], [OSC][osc] & [UDP][udp] to your audio/visual
 interfaces, like Ableton, Renoise, VCV Rack or SuperCollider.
 
 For the purposes of this site, we've connected some drum racks and
-synthesizers from [Enfer][enfer] in the bottom right and are patching them in as virtualized midi instruments. Normally, Orca will not make sound on its own, and
-rather just sends messages or data to external devices or
+synthesizers from [Enfer][enfer] in the bottom right and are patching them in as virtualized midi instruments. Normally, Orca will not make sound on its own, and rather just sends messages or data to external devices or
 programs. Orca and Enfer are both creations of [Devine Lu Linvega][devine].
 
 ## navigation
@@ -97,6 +96,128 @@ on one of their adjacent tiles. Some operators are capable of moving;
 others stay put. You can see a guide referencing the operators by
 pressing `CmdOrCtrl+G`
 
+Operators come in two main flavors: lower-case and upper-case. Lower-case
+letters will operate on every [bang](#bang), and upper-case letters
+will operate on every [frame](#frames).
+
+Most operators take some number of inputs and produce some number of inputs.
+The inputs and outputs are generally going to be on the top, bottom, or sides of the operator.
+
+For example, take the D operator. It has two <strong class="argument">inputs</strong> and one <strong class="output">output</strong>.
+
+<div class='operator-example'>
+<div class='operator-row'>
+<div class='operator-cell'>
+.
+</div>
+<div class='operator-cell'>
+.
+</div>
+<div class='operator-cell'>
+.
+</div>
+</div> <!-- row -->
+<div class='operator-row'>
+<div class='operator-cell tooltip argument'>
+<span class="tooltiptext">the first input: the rate</span>
+8
+</div>
+<div class='operator-cell tooltip'>
+<span class="tooltiptext tooltip">the operator</span>
+D
+</div>
+<div class='operator-cell tooltip argument'>
+<span class="tooltiptext">the second input: the modulo</span>
+2
+</div>
+</div> <!-- row -->
+<div class='operator-row'>
+<div class='operator-cell '>
+.
+</div>
+<div class='operator-cell tooltip output'>
+<span class="tooltiptext tooltip">the output: a bang</span>
+*
+</div>
+<div class='operator-cell'>
+.
+</div>
+</div>
+</div> <!-- example -->
+
+Other operators have a larger number of inptus an outputs. For example, take X - it has three <strong class='argument'>inputs</strong> and one <strong class='output'>output</strong>:
+<div class='operator-example'>
+<div class='operator-row'>
+<div class='operator-cell'>
+.
+</div>
+<div class='operator-cell'>
+.
+</div>
+<div class='operator-cell'>
+.
+</div>
+<div class='operator-cell'>
+.
+</div>
+</div>
+<div class='operator-row'>
+<div class='operator-cell tooltip argument'>
+<span class="tooltiptext">an x coordinate relative to the operator</span>
+1
+</div>
+<div class='operator-cell tooltip argument'>
+<span class="tooltiptext tooltip">a y coordinate relative to the operator</span>
+1
+</div>
+<div class='operator-cell tooltip'>
+<span class="tooltiptext">the operator</span>
+X
+</div>
+<div class='operator-cell tooltip argument'>
+<span class="tooltiptext">the third input: a value</span>
+7
+</div>
+</div>
+<div class='operator-row'>
+<div class='operator-cell '>
+.
+</div>
+<div class='operator-cell '>
+.
+</div>
+<div class='operator-cell '>
+.
+</div>
+<div class='operator-cell '>
+.
+</div>
+</div>
+<div class='operator-row'>
+<div class='operator-cell '>
+.
+</div>
+<div class='operator-cell '>
+.
+</div>
+<div class='operator-cell '>
+.
+</div>
+<div class='operator-cell tooltip output'>
+<span class="tooltiptext tooltip">the output: the input value offset by x, y</span>
+7
+</div>
+</div>
+</div> <!-- example -->
+
+
+### bangs
+
+Bangs are what makes thing happen. Many operators only get triggered when they there is a bang
+operator adjacent to them. The bang operator itself is a * character. For example, the D operator
+causes a bang on an interval at its bottom location. Any adjacent operator will be triggered if it is
+next to that particular cell.
+
 ## timing
 
 Orca has a few relevant components related to timing:
@@ -133,29 +254,12 @@ Incr. Speed(10x)......... CmdOrCtrl+&gt;
 Decr. Speed(10x)......... CmdOrCtrl+&lt;
 ```
 
-# operators
-
-## a (add)
-
-The A operator is really simple - it adds the left and right to the bottom.
-
-```
-.....
-.1A2.
-..3..
-```
-
-Inputs
-
-- left: number
-- right: number
-
-Outputs
-
- - bottom: number
-
 <!-- LINKS -->
 [enfer]: https://github.com/neauoire/Enfer
 [hundredrabbits]: https://100r.co/site/home.html
 [devine]: https://wiki.xxiivv.com/site/home.html
+[orca]: https://github.com/hundredrabbits/Orca
 [metasyn]: https://metasyn.github.io
+[midi]: https://en.wikipedia.org/wiki/MIDI
+[osc]: https://en.wikipedia.org/wiki/Open_Sound_Control
+[udp]: https://en.wikipedia.org/wiki/User_Datagram_Protocol

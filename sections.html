@@ -15,6 +15,7 @@
     <ul>
     <li><a href="#base36-numbers">base36 numbers</a></li>
     <li><a href="#operators">operators</a></li>
+    <li><a href="#bangs">bangs</a></li>
     </ul></li>
     <li><a href="#timing">timing</a>
     <ul>
@@ -23,18 +24,14 @@
     <li><a href="#tempo">tempo</a></li>
     </ul></li>
     </ul></li>
-    <li><a href="#operators-1">operators</a>
-    <ul>
-    <li><a href="#a-add">a (add)</a></li>
-    </ul></li>
     </ul>
   </section>
   <section id="basics" class="level1">
   <h1>basics</h1>
   <section id="about" class="level2">
   <h2>about</h2>
-  <p>Orca is an esoteric programming language, designed to create procedural sequencers in which each letter of the alphabet is an operation, where lowercase letters operate on bang, uppercase letters operate each frame. It was created by <a href="https://100r.co/site/home.html">hundred rabbits</a>, a research studio on a sailboat.</p>
-  <p>Orca is not a synthesizer, but a flexible livecoding environment capable of sending MIDI, OSC &amp; UDP to your audio/visual interfaces, like Ableton, Renoise, VCV Rack or SuperCollider.</p>
+  <p><a href="https://github.com/hundredrabbits/Orca">Orca</a> is an esoteric programming language, designed to create procedural sequencers in which each letter of the alphabet is an <a href="#operators">operation</a>, where lowercase letters operate on <a href="#bang">bang</a>, uppercase letters operate each <a href="#frame">frame</a>. It was created by <a href="https://100r.co/site/home.html">hundred rabbits</a>, a research studio on a sailboat.</p>
+  <p>Orca is not a synthesizer, but a flexible livecoding environment capable of sending <a href="https://en.wikipedia.org/wiki/MIDI">MIDI</a>, <a href="https://en.wikipedia.org/wiki/Open_Sound_Control">OSC</a> &amp; <a href="https://en.wikipedia.org/wiki/User_Datagram_Protocol">UDP</a> to your audio/visual interfaces, like Ableton, Renoise, VCV Rack or SuperCollider.</p>
   <p>For the purposes of this site, we’ve connected some drum racks and synthesizers from <a href="https://github.com/neauoire/Enfer">Enfer</a> in the bottom right and are patching them in as virtualized midi instruments. Normally, Orca will not make sound on its own, and rather just sends messages or data to external devices or programs. Orca and Enfer are both creations of <a href="https://wiki.xxiivv.com/site/home.html">Devine Lu Linvega</a>.</p>
   </section>
   <section id="navigation" class="level2">
@@ -177,6 +174,111 @@
   <section id="operators" class="level3">
   <h3>operators</h3>
   <p>Operators are mostly letters, and a few symbols. An operator takes up one cell in the grid. Most operators have some type of input or output on one of their adjacent tiles. Some operators are capable of moving; others stay put. You can see a guide referencing the operators by pressing <code>CmdOrCtrl+G</code></p>
+  <p>Operators come in two main flavors: lower-case and upper-case. Lower-case letters will operate on every <a href="#bang">bang</a>, and upper-case letters will operate on every <a href="#frames">frame</a>.</p>
+  <p>Most operators take some number of inputs and produce some number of inputs. The inputs and outputs are generally going to be on the top, bottom, or sides of the operator.</p>
+  <p>For example, take the D operator. It has two <strong class="argument">inputs</strong> and one <strong class="output">output</strong>.</p>
+  <div class="operator-example">
+  <div class="operator-row">
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  </div>
+  <!-- row -->
+  <div class="operator-row">
+  <div class="operator-cell tooltip argument">
+  <p><span class="tooltiptext">the first input: the rate</span> 8</p>
+  </div>
+  <div class="operator-cell tooltip">
+  <p><span class="tooltiptext tooltip">the operator</span> D</p>
+  </div>
+  <div class="operator-cell tooltip argument">
+  <p><span class="tooltiptext">the second input: the modulo</span> 2</p>
+  </div>
+  </div>
+  <!-- row -->
+  <div class="operator-row">
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  <div class="operator-cell tooltip output">
+  <p><span class="tooltiptext tooltip">the output: a bang</span> *</p>
+  </div>
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  </div>
+  </div>
+  <p><!-- example --></p>
+  Other operators have a larger number of inptus an outputs. For example, take X - it has three <strong class='argument'>inputs</strong> and one <strong class='output'>output</strong>:
+  <div class="operator-example">
+  <div class="operator-row">
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  </div>
+  <div class="operator-row">
+  <div class="operator-cell tooltip argument">
+  <p><span class="tooltiptext">an x coordinate relative to the operator</span> 1</p>
+  </div>
+  <div class="operator-cell tooltip argument">
+  <p><span class="tooltiptext tooltip">a y coordinate relative to the operator</span> 1</p>
+  </div>
+  <div class="operator-cell tooltip">
+  <p><span class="tooltiptext">the operator</span> X</p>
+  </div>
+  <div class="operator-cell tooltip argument">
+  <p><span class="tooltiptext">the third input: a value</span> 7</p>
+  </div>
+  </div>
+  <div class="operator-row">
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  </div>
+  <div class="operator-row">
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  <div class="operator-cell tooltip output">
+  <p><span class="tooltiptext tooltip">the output: the input value offset by x, y</span> 7</p>
+  </div>
+  </div>
+  </div>
+  <p><!-- example --></p>
+  </section>
+  <section id="bangs" class="level3">
+  <h3>bangs</h3>
+  <p>Bangs are what makes thing happen. Many operators only get triggered when they there is a bang operator adjacent to them. The bang operator itself is a * character. For example, the D operator causes a bang on an interval at its bottom location. Any adjacent operator will be triggered if it is next to that particular cell.</p>
   </section>
   </section>
   <section id="timing" class="level2">
@@ -204,27 +306,8 @@
   Decr. Speed.............. &amp;lt;
   Incr. Speed(10x)......... CmdOrCtrl+&amp;gt;
   Decr. Speed(10x)......... CmdOrCtrl+&amp;lt;</code></pre>
-  </section>
-  </section>
-  </section>
-  <section id="operators-1" class="level1">
-  <h1>operators</h1>
-  <section id="a-add" class="level2">
-  <h2>a (add)</h2>
-  <p>The A operator is really simple - it adds the left and right to the bottom.</p>
-  <pre><code>.....
-  .1A2.
-  ..3..</code></pre>
-  <p>Inputs</p>
-  <ul>
-  <li>left: number</li>
-  <li>right: number</li>
-  </ul>
-  <p>Outputs</p>
-  <ul>
-  <li>bottom: number</li>
-  </ul>
   <!-- LINKS -->
+  </section>
   </section>
   </section>
 <div>

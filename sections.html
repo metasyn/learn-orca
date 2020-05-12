@@ -26,10 +26,15 @@
     </ul></li>
     <li><a href="#first-notes">first notes</a>
     <ul>
-    <li><a href="#the-midi-operator">the midi operator</a></li>
+    <li><a href="#the-midi-operator">the midi operator</a>
+    <ul>
+    <li><a href="#transpose-table">transpose table</a></li>
+    <li><a href="#banging-away">banging away</a></li>
+    </ul></li>
     <li><a href="#randomization">randomization</a></li>
     <li><a href="#regularization">regularization</a></li>
     </ul></li>
+    <li><a href="#contributing">contributing</a></li>
     </ul>
   </section>
   <section id="basics" class="level1">
@@ -306,10 +311,10 @@
   <p>The tempo, as expected, determines the BPM and rate that the clock will tick. There are some relevant shortcuts as well:</p>
   <pre><code>Frame By Frame........... CmdOrCtrl+F
   Reset Frame.............. CmdOrCtrl+Shift+R
-  Incr. Speed.............. &amp;gt;
-  Decr. Speed.............. &amp;lt;
-  Incr. Speed(10x)......... CmdOrCtrl+&amp;gt;
-  Decr. Speed(10x)......... CmdOrCtrl+&amp;lt;</code></pre>
+  Incr. Speed.............. &gt;;
+  Decr. Speed.............. &lt;;
+  Incr. Speed(10x)......... CmdOrCtrl+&gt;;
+  Decr. Speed(10x)......... CmdOrCtrl+&lt;&gt;;</code></pre>
   </section>
   </section>
   </section>
@@ -380,12 +385,108 @@
   </div>
   </div>
   </div>
+  <section id="transpose-table" class="level3">
+  <h3>transpose table</h3>
+  <p>The midi operator interprets any letter above the chromatic scale as a transpose value, for instance 3H, is equivalent to 4A.</p>
+  <table>
+  <thead>
+  <tr class="header">
+  <th style="text-align: center;"><strong>0</strong></th>
+  <th style="text-align: center;"><strong>1</strong></th>
+  <th style="text-align: center;"><strong>2</strong></th>
+  <th style="text-align: center;"><strong>3</strong></th>
+  <th style="text-align: center;"><strong>4</strong></th>
+  <th style="text-align: center;"><strong>5</strong></th>
+  <th style="text-align: center;"><strong>6</strong></th>
+  <th style="text-align: center;"><strong>7</strong></th>
+  <th style="text-align: center;"><strong>8</strong></th>
+  <th style="text-align: center;"><strong>9</strong></th>
+  <th style="text-align: center;"><strong>A</strong></th>
+  <th style="text-align: center;"><strong>B</strong></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="odd">
+  <td style="text-align: center;">_</td>
+  <td style="text-align: center;">_</td>
+  <td style="text-align: center;">_</td>
+  <td style="text-align: center;">_</td>
+  <td style="text-align: center;">_</td>
+  <td style="text-align: center;">_</td>
+  <td style="text-align: center;">_</td>
+  <td style="text-align: center;">_</td>
+  <td style="text-align: center;">_</td>
+  <td style="text-align: center;">_</td>
+  <td style="text-align: center;">A0</td>
+  <td style="text-align: center;">B0</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: center;"><strong>C</strong></td>
+  <td style="text-align: center;"><strong>D</strong></td>
+  <td style="text-align: center;"><strong>E</strong></td>
+  <td style="text-align: center;"><strong>F</strong></td>
+  <td style="text-align: center;"><strong>G</strong></td>
+  <td style="text-align: center;"><strong>H</strong></td>
+  <td style="text-align: center;"><strong>I</strong></td>
+  <td style="text-align: center;"><strong>J</strong></td>
+  <td style="text-align: center;"><strong>K</strong></td>
+  <td style="text-align: center;"><strong>L</strong></td>
+  <td style="text-align: center;"><strong>M</strong></td>
+  <td style="text-align: center;"><strong>N</strong></td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: center;">C0</td>
+  <td style="text-align: center;">D0</td>
+  <td style="text-align: center;">E0</td>
+  <td style="text-align: center;">F0</td>
+  <td style="text-align: center;">G0</td>
+  <td style="text-align: center;">A0</td>
+  <td style="text-align: center;">B0</td>
+  <td style="text-align: center;">C1</td>
+  <td style="text-align: center;">D1</td>
+  <td style="text-align: center;">E1</td>
+  <td style="text-align: center;">F1</td>
+  <td style="text-align: center;">G1</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: center;"><strong>O</strong></td>
+  <td style="text-align: center;"><strong>P</strong></td>
+  <td style="text-align: center;"><strong>Q</strong></td>
+  <td style="text-align: center;"><strong>R</strong></td>
+  <td style="text-align: center;"><strong>S</strong></td>
+  <td style="text-align: center;"><strong>T</strong></td>
+  <td style="text-align: center;"><strong>U</strong></td>
+  <td style="text-align: center;"><strong>V</strong></td>
+  <td style="text-align: center;"><strong>W</strong></td>
+  <td style="text-align: center;"><strong>X</strong></td>
+  <td style="text-align: center;"><strong>Y</strong></td>
+  <td style="text-align: center;"><strong>Z</strong></td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: center;">A1</td>
+  <td style="text-align: center;">B1</td>
+  <td style="text-align: center;">C2</td>
+  <td style="text-align: center;">D2</td>
+  <td style="text-align: center;">E2</td>
+  <td style="text-align: center;">F2</td>
+  <td style="text-align: center;">G2</td>
+  <td style="text-align: center;">A2</td>
+  <td style="text-align: center;">B2</td>
+  <td style="text-align: center;">C3</td>
+  <td style="text-align: center;">D3</td>
+  <td style="text-align: center;">E3</td>
+  </tr>
+  </tbody>
+  </table>
+  </section>
+  <section id="banging-away" class="level3">
+  <h3>banging away</h3>
   <p>However, you’ll need to somehow send a bang to the operator. Go ahead and try checking out some of the instruments that are already wired up via <a href="https://github.com/neauoire/Enfer">Enfer</a>. An easy one to start with is the D operator.</p>
   <p>Try adding the following:</p>
   <pre class="orca"><code>.D......
   ..:03cf5</code></pre>
-  <p>and making sure the clock is on my pressing space.</p>
-  <p>Quickly, you’ll note that this gets a bit annoying. Why don’t we try adding some noise in?</p>
+  <p>and making sure the clock is on my pressing space. Boom! We’ve made our first notes. Quickly, I’m sure you’ll find a single repeating note annoying. Why don’t we add some chaos?</p>
+  </section>
   </section>
   <section id="randomization" class="level2">
   <h2>randomization</h2>
@@ -472,7 +573,11 @@
   <pre class="orca"><code>..C.....
   .D..aRz.
   ..:03cf5</code></pre>
-  <!-- LINKS -->
   </section>
+  </section>
+  <section id="contributing" class="level1">
+  <h1>contributing</h1>
+  <p>If you find this guide useful, and would like to contribute, PRs are welcome <a href="https://github.com/metasyn/learn-orca">here</a>.</p>
+  <!-- LINKS -->
   </section>
 <div>

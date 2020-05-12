@@ -253,10 +253,10 @@ clock will tick. There are some relevant shortcuts as well:
 ```
 Frame By Frame........... CmdOrCtrl+F
 Reset Frame.............. CmdOrCtrl+Shift+R
-Incr. Speed.............. &gt;
-Decr. Speed.............. &lt;
-Incr. Speed(10x)......... CmdOrCtrl+&gt;
-Decr. Speed(10x)......... CmdOrCtrl+&lt;
+Incr. Speed.............. >;
+Decr. Speed.............. <;
+Incr. Speed(10x)......... CmdOrCtrl+>;
+Decr. Speed(10x)......... CmdOrCtrl+<>;
 ```
 
 # first notes
@@ -337,6 +337,21 @@ F
 </div>
 </div>
 
+### transpose table
+
+The midi operator interprets any letter above the chromatic scale as a transpose value, for instance 3H, is equivalent to 4A.
+
+| **0** | **1** | **2** | **3** | **4** | **5** | **6** | **7** | **8** | **9** | **A** | **B**  | 
+| :-:   | :-:   | :-:   | :-:   | :-:   | :-:   | :-:   | :-:   | :-:   | :-:   | :-:   | :-:    | 
+| _     | _     | _     | _     | _     | _     | _     | _     | _     | _     | A0    | B0     |
+| **C** | **D** | **E** | **F** | **G** | **H** | **I** | **J** | **K** | **L** | **M** | **N**  |
+| C0    | D0    | E0    | F0    | G0    | A0    | B0    | C1    | D1    | E1    | F1    | G1     | 
+| **O** | **P** | **Q** | **R** | **S** | **T** | **U** | **V** | **W** | **X** | **Y** | **Z**  | 
+| A1    | B1    | C2    | D2    | E2    | F2    | G2    | A2    | B2    | C3    | D3    | E3     | 
+
+
+### banging away
+
 However, you'll need to somehow send a bang to the operator.
 Go ahead and try checking out some of the instruments that are already wired up via [Enfer][enfer].
 An easy one to start with is the D operator.
@@ -346,9 +361,8 @@ Try adding the following:
 .D......
 ..:03cf5
 ```
-and making sure the clock is on my pressing space.
-
-Quickly, you'll note that this gets a bit annoying. Why don't we try adding some noise in?
+and making sure the clock is on my pressing space. Boom! We've made our first notes.
+Quickly, I'm sure you'll find a single repeating note annoying. Why don't we add some chaos?
 
 ## randomization
 
@@ -457,8 +471,12 @@ Try running the following:
 ..:03cf5
 ```
 
+# contributing
+
+If you find this guide useful, and would like to contribute, PRs are welcome [here][learn-orca].
  
 <!-- LINKS -->
+[learn-orca]: https://github.com/metasyn/learn-orca
 [enfer]: https://github.com/neauoire/Enfer
 [hundredrabbits]: https://100r.co/site/home.html
 [devine]: https://wiki.xxiivv.com/site/home.html

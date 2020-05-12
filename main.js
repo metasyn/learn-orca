@@ -80,7 +80,7 @@ function loadExamples() {
 
 function addTilt() {
   VanillaTilt.init(document.querySelectorAll(".operator-example"));
-  VanillaTilt.init(document.querySelectorAll("#base36-numbers > table"));
+  VanillaTilt.init(document.querySelectorAll("section > table"));
 }
 
 function loadOrca(string) {

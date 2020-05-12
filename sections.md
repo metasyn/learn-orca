@@ -474,11 +474,13 @@ Try running the following:
 # contributing
 
 If you find this guide useful, and would like to contribute, PRs are welcome [here][learn-orca].
+If you find [Orca][orca] or [Enfer][enfer] useful; please support [hunred rabbits][support].
  
 <!-- LINKS -->
 [learn-orca]: https://github.com/metasyn/learn-orca
 [enfer]: https://github.com/neauoire/Enfer
 [hundredrabbits]: https://100r.co/site/home.html
+[support]: https://100r.co/site/support.html
 [devine]: https://wiki.xxiivv.com/site/home.html
 [orca]: https://github.com/hundredrabbits/Orca
 [metasyn]: https://metasyn.github.io

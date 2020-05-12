@@ -23,7 +23,21 @@
 @media (max-width: 768px) {
 	td { display: block;
 	}
+
+	#orca { display: none }
+	#enfer { display: none }
+
+	body {
+		width: 95% !important;
+		max-width: 95% !important;
+		margin: 0px;
+	}
+
+	section {
+		overflow-x: scroll;
+	}
 }
+
 
 /* -------------------- */
 /* grid                 */
@@ -222,6 +236,7 @@ table, th, td {
   text-align: center;
   border: 1.5px solid var(--color-border);
   padding: 0.5em;
+  display: revert;
 }
 
 tbody tr:nth-child(odd) {

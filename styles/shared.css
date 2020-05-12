@@ -9,6 +9,7 @@
   --color-contrast: #549EC3;        /* blue */
 
   --color-low: #2BA07F;
+  --color-border: #222;
 
   --min-width: 64em;
 
@@ -190,12 +191,12 @@ body {
 table, th, td {
   margin: auto;
   text-align: center;
-  border: 1.5px solid #222;
+  border: 1.5px solid var(--color-border);
   padding: 0.5em;
 }
 
 tbody tr:nth-child(odd) {
-  background-color: #222;
+  background-color: var(--color-border);
 }
 
 iframe {
@@ -267,7 +268,90 @@ iframe {
 		animation: flash 0.5s step-end infinite;
 	}
 }
-/* SDOOGEHT */
+
+/* -------------------- */
+/* tool tip examples     /
+/* -------------------- */
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 250px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 14px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.operator-example {
+	font-size: 30px;
+	display: table;
+	border-spacing: 1px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	padding: 10px;
+	border: 2px solid;
+	border-color: var(--color-border);
+}
+
+.operator-cell > p {
+	margin: 0.25em;
+}
+
+.operator-row {
+	margin: 0px;
+	padding: 0px;
+	display: block;
+}
+
+.operator-cell {
+	width: 50px;
+	height: 40px;
+	display: table-cell;
+	text-align: center;
+}
+
+.argument {
+	color: black;
+	background-color: var(--color-main);
+}
+
+.output {
+	color: black;
+	background-color: var(--color-complement);
+}
 
 
 /* Font */

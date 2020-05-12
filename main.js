@@ -3,6 +3,7 @@
 /* globals */
 // generatedExamples - from examples.js
 // VanillaTilt - tilty
+var examples;
 
 window.addEventListener("load", function () {
   console.log("Patching Orca <--> Enfer!");
@@ -39,7 +40,7 @@ function addOrcaPreListeners() {
 }
 
 function loadExamples() {
-  const examples = {
+  examples = {
     ...generatedExamples,
     simpleBeat: `
   .............
@@ -90,7 +91,7 @@ function loadOrca(string) {
 }
 
 function loadExample(name) {
-  loadOrca(exampes[name])
+  loadOrca(examples[name])
 }
 
 function makeOperatorExample(el, a, b, c) {

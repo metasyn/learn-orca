@@ -4,8 +4,8 @@
 
 [Orca][orca] is an esoteric programming language, designed to create
 procedural sequencers in which each letter of the alphabet is an
-[operation](#operators), where lowercase letters operate on [bang](#bang), uppercase
-letters operate each [frame](#frame). It was created by
+[operation](#operators), where lowercase letters operate on [bang](#bangs), uppercase
+letters operate each [frame](#frames). It was created by
 [hundred rabbits][hundredrabbits], a research studio on a sailboat.
 
 Orca is not a synthesizer, but a flexible livecoding environment

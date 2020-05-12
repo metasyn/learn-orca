@@ -319,8 +319,8 @@ iframe {
   position: absolute;
   z-index: 1;
   bottom: 125%;
-  left: 50%;
-  margin-left: -60px;
+  left: -100px;
+  margin-left: 0px;
   opacity: 0;
   transition: opacity 0.3s;
   font-size: 14px;

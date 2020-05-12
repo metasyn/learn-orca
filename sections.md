@@ -209,7 +209,7 @@ X
 .
 </div>
 <div class='operator-cell tooltip output'>
-<span class="tooltiptext tooltip">the output: the input value offset by -x, -y</span>
+<span class="tooltiptext tooltip">the output: the input value offset by x, -y</span>
 7
 </div>
 </div>

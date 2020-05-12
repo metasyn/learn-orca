@@ -154,7 +154,7 @@ pre.orca:hover {
 }
 
 pre.orca::before {
-	content: "Click to load ▶";
+	content: "▶";
 	font-size: 12px;
 	margin: auto;
 	position: absolute;

@@ -9,6 +9,7 @@ if __name__ == '__main__':
     ret = {}
     files = [
         f for f in glob.glob(EXAMPLES_FOLDER + "**/*.orca", recursive=True)
+        if ('osc' not in f) and ('benchmark' not in f) and ('udp' not in f)
     ]
 
     for path in files:

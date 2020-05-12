@@ -103,7 +103,7 @@ will operate on every [frame](#frames).
 Most operators take some number of inputs and produce some number of inputs.
 The inputs and outputs are generally going to be on the top, bottom, or sides of the operator.
 
-For example, take the D operator. It has two <strong class="argument">inputs</strong> and one <strong class="output">output</strong>.
+For example, take the D operator. It has two <span class="argument">inputs</span> and one <span class="output">output</span>.
 
 <div class='operator-example'>
 <div class='operator-row'>
@@ -147,7 +147,7 @@ D
 </div>
 </div> <!-- example -->
 
-Other operators have a larger number of inptus an outputs. For example, take X - it has three <strong class='argument'>inputs</strong> and one <strong class='output'>output</strong>:
+Other operators have a larger number of inptus an outputs. For example, take X - it has three <span class='argument'>inputs</span> and one <span class='output'>output</span>:
 <div class='operator-example'>
 <div class='operator-row'>
 <div class='operator-cell'>
@@ -253,17 +253,17 @@ clock will tick. There are some relevant shortcuts as well:
 ```
 Frame By Frame........... CmdOrCtrl+F
 Reset Frame.............. CmdOrCtrl+Shift+R
-Incr. Speed.............. >;
-Decr. Speed.............. <;
-Incr. Speed(10x)......... CmdOrCtrl+>;
-Decr. Speed(10x)......... CmdOrCtrl+<>;
+Incr. Speed.............. >
+Decr. Speed.............. <
+Incr. Speed(10x)......... CmdOrCtrl+>
+Decr. Speed(10x)......... CmdOrCtrl+<
 ```
 
 # first notes
 
 ## the midi operator
 For the purposes of learning, the easiest way to start making some sound is by using the midi operator.
-The midi operator takes five <strong class="arguments">inputs</strong>. It has zero Orca <strong class="output">outputs</strong>
+The midi operator takes five <span class="arguments">inputs</span>. It has zero Orca <span class="output">outputs</span>
 but as you  might expect, sends a midi message to a midi device.
 
 <div class='operator-example'>

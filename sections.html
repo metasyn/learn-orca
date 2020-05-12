@@ -24,6 +24,12 @@
     <li><a href="#tempo">tempo</a></li>
     </ul></li>
     </ul></li>
+    <li><a href="#first-notes">first notes</a>
+    <ul>
+    <li><a href="#the-midi-operator">the midi operator</a></li>
+    <li><a href="#randomization">randomization</a></li>
+    <li><a href="#regularization">regularization</a></li>
+    </ul></li>
     </ul>
   </section>
   <section id="basics" class="level1">
@@ -189,7 +195,6 @@
   <p>.</p>
   </div>
   </div>
-  <!-- row -->
   <div class="operator-row">
   <div class="operator-cell tooltip argument">
   <p><span class="tooltiptext">the first input: the rate</span> 8</p>
@@ -201,7 +206,6 @@
   <p><span class="tooltiptext">the second input: the modulo</span> 2</p>
   </div>
   </div>
-  <!-- row -->
   <div class="operator-row">
   <div class="operator-cell">
   <p>.</p>
@@ -270,7 +274,7 @@
   <p>.</p>
   </div>
   <div class="operator-cell tooltip output">
-  <p><span class="tooltiptext tooltip">the output: the input value offset by x, y</span> 7</p>
+  <p><span class="tooltiptext tooltip">the output: the input value offset by -x, -y</span> 7</p>
   </div>
   </div>
   </div>
@@ -306,8 +310,169 @@
   Decr. Speed.............. &amp;lt;
   Incr. Speed(10x)......... CmdOrCtrl+&amp;gt;
   Decr. Speed(10x)......... CmdOrCtrl+&amp;lt;</code></pre>
-  <!-- LINKS -->
   </section>
+  </section>
+  </section>
+  <section id="first-notes" class="level1">
+  <h1>first notes</h1>
+  <section id="the-midi-operator" class="level2">
+  <h2>the midi operator</h2>
+  <p>For the purposes of learning, the easiest way to start making some sound is by using the midi operator. The midi operator takes five <strong class="arguments">inputs</strong>. It has zero Orca <strong class="output">outputs</strong> but as you might expect, sends a midi message to a midi device.</p>
+  <div class="operator-example">
+  <div class="operator-row">
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  </div>
+  <div class="operator-row">
+  <div class="operator-cell tooltip">
+  <p><span class="tooltiptext">the operator</span> :</p>
+  </div>
+  <div class="operator-cell tooltip argument">
+  <p><span class="tooltiptext tooltip">a midi channel to send messages on (A = channel 10)</span> A</p>
+  </div>
+  <div class="operator-cell tooltip argument">
+  <p><span class="tooltiptext">an octave</span> 2</p>
+  </div>
+  <div class="operator-cell tooltip argument">
+  <p><span class="tooltiptext">a note value</span> F</p>
+  </div>
+  <div class="operator-cell tooltip argument">
+  <p><span class="tooltiptext">a velocity value</span> 5</p>
+  </div>
+  <div class="operator-cell tooltip argument">
+  <p><span class="tooltiptext">a duration value</span> 1</p>
+  </div>
+  </div>
+  <div class="operator-row">
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  </div>
+  </div>
+  <p>However, you’ll need to somehow send a bang to the operator. Go ahead and try checking out some of the instruments that are already wired up via <a href="https://github.com/neauoire/Enfer">Enfer</a>. An easy one to start with is the D operator.</p>
+  <p>Try adding the following:</p>
+  <pre class="orca"><code>.D......
+  ..:03cf5</code></pre>
+  <p>and making sure the clock is on my pressing space.</p>
+  <p>Quickly, you’ll note that this gets a bit annoying. Why don’t we try adding some noise in?</p>
+  </section>
+  <section id="randomization" class="level2">
+  <h2>randomization</h2>
+  <p>We can add a random note value by using the R operator.</p>
+  <div class="operator-example">
+  <div class="operator-row">
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  </div>
+  <div class="operator-row">
+  <div class="operator-cell tooltip argument">
+  <p><span class="tooltiptext">the first input: the minimum random value</span> a</p>
+  </div>
+  <div class="operator-cell tooltip">
+  <p><span class="tooltiptext tooltip">the operator</span> R</p>
+  </div>
+  <div class="operator-cell tooltip argument">
+  <p><span class="tooltiptext">the second input: the maximum random value</span> z</p>
+  </div>
+  </div>
+  <div class="operator-row">
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  <div class="operator-cell tooltip output">
+  <p><span class="tooltiptext tooltip">the output: a random value</span> t</p>
+  </div>
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  </div>
+  </div>
+  <p><!-- example --></p>
+  <p>So, lets try putting it above our note argument:</p>
+  <pre class="orca"><code>.D..aRz.
+  ..:03cf5</code></pre>
+  </section>
+  <section id="regularization" class="level2">
+  <h2>regularization</h2>
+  <p>We can also create something interesting by varying regularly. One useful operator for this is the C operator.</p>
+  <div class="operator-example">
+  <div class="operator-row">
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  </div>
+  <div class="operator-row">
+  <div class="operator-cell tooltip argument">
+  <p><span class="tooltiptext">the first input: the rate</span> 2</p>
+  </div>
+  <div class="operator-cell tooltip">
+  <p><span class="tooltiptext tooltip">the operator</span> C</p>
+  </div>
+  <div class="operator-cell tooltip argument">
+  <p><span class="tooltiptext">the second input: the modulo</span> 7</p>
+  </div>
+  </div>
+  <div class="operator-row">
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  <div class="operator-cell tooltip output">
+  <p><span class="tooltiptext tooltip">the output: the clock value</span> 4</p>
+  </div>
+  <div class="operator-cell">
+  <p>.</p>
+  </div>
+  </div>
+  </div>
+  <p>Try running the following:</p>
+  <pre class="orca"><code>..C.....
+  .D..aRz.
+  ..:03cf5</code></pre>
+  <!-- LINKS -->
   </section>
   </section>
 <div>

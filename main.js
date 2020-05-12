@@ -2,7 +2,7 @@
 
 /* globals */
 // generatedExamples - from examples.js
-var examples;
+// VanillaTilt - tilty
 
 window.addEventListener("load", function () {
   console.log("Patching Orca <--> Enfer!");
@@ -24,25 +24,22 @@ window.addEventListener("load", function () {
   window.orcaClient = orcaClient;
   window.enferClient = enferClient;
 
-  examples = loadExamples()
-  const sorted = Object.keys(examples).sort()
-
-  const dropDown = document.getElementById('examples-content');
-  sorted.forEach(item => {
-    // Create anchor
-    const a = document.createElement('a');  
-    const link = document.createTextNode(item);
-    a.appendChild(link);  
-    a.href=`javascript:loadExample('${item}')`
-
-    // Append
-    dropDown.appendChild(a);
-  })
+  addOrcaPreListeners()
+  loadExamples()
+  addTilt()
 
 });
 
+function addOrcaPreListeners() {
+  document.querySelectorAll('pre.orca').forEach(
+    thing => thing.addEventListener('click', event => {
+      loadOrca(event.target.innerText)
+    })
+  )
+}
+
 function loadExamples() {
-  return {
+  const examples = {
     ...generatedExamples,
     simpleBeat: `
   .............
@@ -65,12 +62,35 @@ function loadExamples() {
   .............
   `
   }
+
+  const sorted = Object.keys(examples).sort()
+
+  const dropDown = document.getElementById('examples-content');
+  sorted.forEach(item => {
+    // Create anchor
+    const a = document.createElement('a');  
+    const link = document.createTextNode(item);
+    a.appendChild(link);  
+    a.href=`javascript:loadExample('${item}')`
+
+    // Append
+    dropDown.appendChild(a);
+  })
+}
+
+function addTilt() {
+  VanillaTilt.init(document.querySelectorAll(".operator-example"));
+  VanillaTilt.init(document.querySelectorAll("#base36-numbers > table"));
+}
+
+function loadOrca(string) {
+  orcaClient.orca.reset();
+  orcaClient.toggleGuide(false);
+  orcaClient.orca.writeBlock(2, 2, string)
 }
 
 function loadExample(name) {
-  orcaClient.orca.reset();
-  orcaClient.toggleGuide(false);
-  orcaClient.orca.writeBlock(2, 2, examples[name])
+  loadOrca(exampes[name])
 }
 
 function makeOperatorExample(el, a, b, c) {

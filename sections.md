@@ -116,7 +116,8 @@ For example, take the D operator. It has two <strong class="argument">inputs</st
 <div class='operator-cell'>
 .
 </div>
-</div> <!-- row -->
+</div>
+
 <div class='operator-row'>
 <div class='operator-cell tooltip argument'>
 <span class="tooltiptext">the first input: the rate</span>
@@ -130,7 +131,8 @@ D
 <span class="tooltiptext">the second input: the modulo</span>
 2
 </div>
-</div> <!-- row -->
+</div> 
+
 <div class='operator-row'>
 <div class='operator-cell '>
 .
@@ -161,6 +163,7 @@ Other operators have a larger number of inptus an outputs. For example, take X -
 .
 </div>
 </div>
+
 <div class='operator-row'>
 <div class='operator-cell tooltip argument'>
 <span class="tooltiptext">an x coordinate relative to the operator</span>
@@ -179,6 +182,7 @@ X
 7
 </div>
 </div>
+
 <div class='operator-row'>
 <div class='operator-cell '>
 .
@@ -193,6 +197,7 @@ X
 .
 </div>
 </div>
+
 <div class='operator-row'>
 <div class='operator-cell '>
 .
@@ -204,7 +209,7 @@ X
 .
 </div>
 <div class='operator-cell tooltip output'>
-<span class="tooltiptext tooltip">the output: the input value offset by x, y</span>
+<span class="tooltiptext tooltip">the output: the input value offset by -x, -y</span>
 7
 </div>
 </div>
@@ -254,6 +259,205 @@ Incr. Speed(10x)......... CmdOrCtrl+&gt;
 Decr. Speed(10x)......... CmdOrCtrl+&lt;
 ```
 
+# first notes
+
+## the midi operator
+For the purposes of learning, the easiest way to start making some sound is by using the midi operator.
+The midi operator takes five <strong class="arguments">inputs</strong>. It has zero Orca <strong class="output">outputs</strong>
+but as you  might expect, sends a midi message to a midi device.
+
+<div class='operator-example'>
+<div class='operator-row'>
+<div class='operator-cell'>
+.
+</div>
+<div class='operator-cell'>
+.
+</div>
+<div class='operator-cell'>
+.
+</div>
+<div class='operator-cell'>
+.
+</div>
+<div class='operator-cell'>
+.
+</div>
+<div class='operator-cell'>
+.
+</div>
+</div>
+
+<div class='operator-row'>
+<div class='operator-cell tooltip'>
+<span class="tooltiptext">the operator</span>
+:
+</div>
+<div class='operator-cell tooltip argument'>
+<span class="tooltiptext tooltip">a midi channel to send messages on (A = channel 10)</span>
+A
+</div>
+<div class='operator-cell tooltip argument'>
+<span class="tooltiptext">an octave</span>
+2
+</div>
+<div class='operator-cell tooltip argument'>
+<span class="tooltiptext">a note value</span>
+F
+</div>
+<div class='operator-cell tooltip argument'>
+<span class="tooltiptext">a velocity value</span>
+5
+</div>
+<div class='operator-cell tooltip argument'>
+<span class="tooltiptext">a duration value</span>
+1
+</div>
+</div>
+
+<div class='operator-row'>
+<div class='operator-cell '>
+.
+</div>
+<div class='operator-cell '>
+.
+</div>
+<div class='operator-cell '>
+.
+</div>
+<div class='operator-cell '>
+.
+</div>
+<div class='operator-cell '>
+.
+</div>
+<div class='operator-cell '>
+.
+</div>
+</div>
+</div>
+
+However, you'll need to somehow send a bang to the operator.
+Go ahead and try checking out some of the instruments that are already wired up via [Enfer][enfer].
+An easy one to start with is the D operator.
+
+Try adding the following:
+```orca
+.D......
+..:03cf5
+```
+and making sure the clock is on my pressing space.
+
+Quickly, you'll note that this gets a bit annoying. Why don't we try adding some noise in?
+
+## randomization
+
+We can add a random note value by using the R operator.
+
+<div class='operator-example'>
+<div class='operator-row'>
+<div class='operator-cell'>
+.
+</div>
+<div class='operator-cell'>
+.
+</div>
+<div class='operator-cell'>
+.
+</div>
+</div>
+
+<div class='operator-row'>
+<div class='operator-cell tooltip argument'>
+<span class="tooltiptext">the first input: the minimum random value</span>
+a
+</div>
+<div class='operator-cell tooltip'>
+<span class="tooltiptext tooltip">the operator</span>
+R
+</div>
+<div class='operator-cell tooltip argument'>
+<span class="tooltiptext">the second input: the maximum random value</span>
+z
+</div>
+</div> 
+
+<div class='operator-row'>
+<div class='operator-cell '>
+.
+</div>
+<div class='operator-cell tooltip output'>
+<span class="tooltiptext tooltip">the output: a random value</span>
+t
+</div>
+<div class='operator-cell'>
+.
+</div>
+</div>
+</div> <!-- example -->
+
+So, lets try putting it above our note argument:
+
+```orca
+.D..aRz.
+..:03cf5
+```
+
+## regularization
+
+We can also create something interesting by varying regularly. One useful operator for this is the C operator.
+
+<div class='operator-example'>
+<div class='operator-row'>
+<div class='operator-cell'>
+.
+</div>
+<div class='operator-cell'>
+.
+</div>
+<div class='operator-cell'>
+.
+</div>
+</div>
+
+<div class='operator-row'>
+<div class='operator-cell tooltip argument'>
+<span class="tooltiptext">the first input: the rate</span>
+2
+</div>
+<div class='operator-cell tooltip'>
+<span class="tooltiptext tooltip">the operator</span>
+C
+</div>
+<div class='operator-cell tooltip argument'>
+<span class="tooltiptext">the second input: the modulo</span>
+7
+</div>
+</div> 
+
+<div class='operator-row'>
+<div class='operator-cell '>
+.
+</div>
+<div class='operator-cell tooltip output'>
+<span class="tooltiptext tooltip">the output: the clock value</span>
+4
+</div>
+<div class='operator-cell'>
+.
+</div>
+</div>
+</div>
+
+Try running the following:
+
+```orca
+..C.....
+.D..aRz.
+..:03cf5
+```
+
+ 
 <!-- LINKS -->
 [enfer]: https://github.com/neauoire/Enfer
 [hundredrabbits]: https://100r.co/site/home.html

@@ -471,6 +471,26 @@ Try running the following:
 ..:03cf5
 ```
 
+Now lets make four of them!
+
+```orca
+..C.....
+.D..aRz.
+..:03cf5
+
+..C.....
+.D..aRz.
+..:03cf5
+
+..C.....
+.D..aRz.
+..:03cf5
+
+..C.....
+.D..aRz.
+..:03cf5
+```
+
 # contributing
 
 If you find this guide useful, and would like to contribute, PRs are welcome [here][learn-orca].

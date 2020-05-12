@@ -7,3 +7,6 @@ pandoc:
 		--section-divs \
 		--template=templates/main.pandoc \
 		sections.md > sections.html
+
+watch:
+	fswatch -0 sections.md | xargs -0 -I {} make pandoc

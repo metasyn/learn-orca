@@ -8,19 +8,22 @@
     <link rel="stylesheet" href="styles/shared.css" />
   </head>
   <body>
-    <div id="navbar">
-      <a href="https://hundredrabbits.itch.io/orca">ORCΛ</a>
-      <a href="#glossary">glossary</a>
-      <a href="#operators">operators</a>
-      <a href="#faq">faq</a>
+    <div class="navbar">
+      <a href="/">home</a>
+      <a href="https://github.com/hundredrabbits/orca">ORCΛ</a>
+      <div class="dropdown">
+        <button class="dropbtn">operators
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#a-add">A</a>
+        </div>
+      </div>
     </div>
 
     <h1 id="fancyboi">LEARN ORCΛ</h1>
-
-    <div class="content grid">
-      <iframe src="sections.html" onload="this.before(this.contentDocument.body.children[0]);this.remove();"></iframe>
-    </div>
-
+    <iframe src="sections.html" onload="this.before(this.contentDocument.body.children[0]);this.remove();"></iframe>
+    
     <script src="main.js"></script>
 
     <div id="orca">

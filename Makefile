@@ -1,4 +1,5 @@
 .PHONY: pandoc examples watch serve format lint
+.ONESHELL:
 
 pandoc:
 	pandoc \
@@ -23,3 +24,14 @@ format:
 
 lint:
 	eslint js/*
+
+tmux:
+	tmux new-session -d -s "learn-orca" \; \
+    new-window \; \
+    send-keys 'make serve' C-m \; \
+		rename-window "serve" \; \
+		new-window \; \
+    send-keys 'make watch' C-m \; \
+		rename-window "watch" \; \
+		select-window -t 0
+	tmux attach-session -t "learn-orca"

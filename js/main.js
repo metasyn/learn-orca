@@ -162,6 +162,30 @@ function makeRow(cells) {
 }
 
 const operatorData = {
+  A: {
+    length: 3,
+    rows: [
+      null,
+      [
+        argumentCell('2', 'the first input'),
+        tooltipCell('A', 'the operator'),
+        argumentCell('5', 'the second input'),
+      ],
+      [null, outputCell('7', 'the output: the sum'), null],
+    ],
+  },
+  B: {
+    length: 3,
+    rows: [
+      null,
+      [
+        argumentCell('2', 'the first input'),
+        tooltipCell('B', 'the operator'),
+        argumentCell('5', 'the second input'),
+      ],
+      [null, outputCell('3', 'the output: the difference'), null],
+    ],
+  },
   C: {
     length: 3,
     rows: [
@@ -186,10 +210,22 @@ const operatorData = {
       [null, outputCell('*', 'the output: a bang'), null],
     ],
   },
+  F: {
+    length: 3,
+    rows: [
+      null,
+      [
+        argumentCell('6', 'the first input'),
+        tooltipCell('F', 'the operator'),
+        argumentCell('6', 'the second input'),
+      ],
+      [null, outputCell('*', 'the output: a bang'), null],
+    ],
+  },
   J: {
     length: 3,
     rows: [
-      [null, argumentCell('9', 'the input: some value'), null],
+      [null, argumentCell('9', 'the input'), null],
       [null, tooltipCell('J', 'the operator'), null],
       [null, outputCell('9', 'the output: the input value'), null],
     ],
@@ -245,7 +281,7 @@ const operatorData = {
     rows: [
       null,
       [
-        argumentCell('3', 'the input: some value'),
+        argumentCell('3', 'the input'),
         tooltipCell('Y', 'the operator'),
         outputCell('3', 'the output: the input value'),
       ],

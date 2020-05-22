@@ -57,7 +57,7 @@ Scale West(Leap)......... CmdOrCtrl+Shift+ArrowLeftl
 ### cursor
 
 Lastly, there is a concept of a cursor mode, kind of like VIM.
-Normally, typing will only edit value under the head of the cursor
+Normally, typing will only edit values under the head of the cursor
 (the @ sign). If you switch to insert mode, you can type and the
 cursor head will auto advance.
 ```
@@ -202,7 +202,7 @@ We can add a random note value by using the R (random) operator.
 So, lets try putting it above our note argument:
 
 ```orca
-.D..aRz.
+.D..aRf.
 ..:03cf5
 ```
 
@@ -216,46 +216,44 @@ Try running the following:
 
 ```orca
 ..C.....
-.D..aRz.
+.D..aRf.
 ..:03cf5
 ```
 
 Now lets make two of them! Remember you can drag with the mouse or just use the arrow keys and shift to select a section.
-After that, simply copy and paste to a new section.
+After that, simply copy and paste to a new section. Let's also make some changes:
+
+- remove the clock from one of the items and replace it with a constant value (2).
+- move the octave down one
 
 ```orca
 ..C.....
-.D..aRz.
+.D..aRf.
 ..:03cf5
 
-..C.....
-.D..aRz.
-..:03cf5
+........
+.D2.aRf.
+..:02cf5
 ```
 
-Granted, this is starting to sound kind of crazy. Instead of just random notes, let's set up a T (tracker) operator.
+Now we have a somewhat interesting mixture of regularization, and randomziation.
+
+## sequencing
+
+What if we wanted to specify a particular sequence of notes, rather than choosing them randomly?
+
+One of the most essential operators for sequencing is the T (tracker) operator.
 The T operator takes at minimum 3 <span class='argument'>inputs</span>. We say at minimum because one of the arguments
 *determines* how many arguments there are on the right side.
 
 <div class='operator' data-operator='T'></div>
 
 T operators are nice because we can specify a sequence of notes that we are interested in and we can also
-control how often we change between them, as well as which ones we want to change to. However, as you can see,
-we're starting to get a little crowded. Two operators we can use to space things out are the Y and J operators.
-
-The Y operator moves a value from the <span class='argument'>left</span> to the <span class='output'>right</span>:
-
-<div class='operator' data-operator='Y'></div>
-
-The J operator moves a value from the <span class='argument'>top</span> to the <span class='output'>bottom</span>:
-
-<div class='operator' data-operator='J'></div>
-
-We can use these when things start to feel too tight. Let's start by establishing an interesting or fun sequence with the T
-operator, then moving the value it prodces down into the note selection area for a midi operator. Here's what we'll do:
+control how often we change between them, as well as which ones we want to change to. Let's start by establishing an interesting or fun sequence with the T
+operator, then moving the operand it produces down into the note selection area for a midi operator. Here's what we'll do:
 
 - add a T operator to establish a sequence
-- use a C operator to add an increasing tick to move the selection we have on T's values
+- use a C operator to add an increasing tick to move the selection we have on T's operands
 - remove the R operator and replace it with a J, which will insert the note into our midi operator.
 
 
@@ -269,6 +267,83 @@ operator, then moving the value it prodces down into the note selection area for
 ```
 
 Wait! It sounds different. Note that we also changed the midi operator's channel and octave. We're now sending a much lower note to a different instrument. Try changing it yourself.
+
+## simple math
+
+There are few operators for give us some basic math skills. These will prove invaluable when adding nuance to your creation. The first is the A operator, which, maybe predictably, is for addition:
+
+<div class='operator' data-operator='A'></div>
+
+After that, we have the B operator, which takes the difference of two operands:
+
+
+<div class='operator' data-operator='B'></div>
+
+One other simple operator that is really useful for adding some nuance is the F operator. The F operator checks for quality, and bangs if its true.
+
+<div class='operator' data-operator='F'></div>
+
+## percussion
+
+[Devine](devine) has conveiently added drum samples to the first octaves of the voices in [Enfer](enfer) which is where our synthesizers and sounds are actually coming from. Let's add a kick, snare, hi-hat and lead to our previous bassline.
+
+```orca
+..........................
+.#.sequence.#..#..kick..#.
+..........................
+...C.............C........
+...38TCFGACFE....3F6......
+..C..A.............:30cff.
+.D3..J....................
+.*:32Af5..................
+..........................
+.#..snare...#...#..hat..#.
+..........................
+...C..............0R4.....
+...3F2.............1B2....
+.....:10eff.......fC1.....
+.................2B0......
+................2D2.......
+..................:10hff..
+..........................
+.#.........lead.........#.
+..........................
+.....4Cf..................
+....D40fT...C..E.F.D..G...
+.....:85.ff...............
+..........................
+.....2....................
+..........................
+```
+
+With that, we've made our first little tune!
+
+
+# organization
+
+## jumping around
+
+As you can probably imagine, sometimes things can get a little crowded. Two operators we can use to space things out are the J (jumper) and Y (jymper) operators.
+
+The Y operator moves an operand from the <span class='argument'>left</span> to the <span class='output'>right</span>:
+
+<div class='operator' data-operator='Y'></div>
+
+The J operator moves an operand from the <span class='argument'>top</span> to the <span class='output'>bottom</span>:
+
+<div class='operator' data-operator='J'></div>
+
+We can use these when things start to feel too tight - or if you need to move an operator around a bit.
+
+## writing & querying
+
+When you're trying to read or write further away, there are two operators that are particularly relevant:
+
+- X (write) : write operands at an offset
+- Q (query) : reads operands at an offset
+
+<div class='operator' data-operator='X'></div>
+
 
 
 # contributing

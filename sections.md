@@ -1,4 +1,4 @@
-# basics 
+# basics
 
 ## about
 
@@ -78,12 +78,12 @@ Orca utilizes a unique base-36 number system:
 
 Here is a table to make it clear:
 
-| **0** | **1** | **2** | **3** | **4** | **5** | **6** | **7** | **8** | **9** | **A** | **B**  | 
-| :-:   | :-:   | :-:   | :-:   | :-:   | :-:   | :-:   | :-:   | :-:   | :-:   | :-:   | :-:    | 
+| **0** | **1** | **2** | **3** | **4** | **5** | **6** | **7** | **8** | **9** | **A** | **B**  |
+| :-:   | :-:   | :-:   | :-:   | :-:   | :-:   | :-:   | :-:   | :-:   | :-:   | :-:   | :-:    |
 | 0     | 1     | 2     | 3     | 4     | 5     | 6     | 7     | 8     | 9     | 10    | 11     |
 | **C** | **D** | **E** | **F** | **G** | **H** | **I** | **J** | **K** | **L** | **M** | **N**  |
 | 12    | 13    | 14    | 15    | 16    | 17    | 18    | 19    | 20    | 21    | 22    | 23     |
-| **O** | **P** | **Q** | **R** | **S** | **T** | **U** | **V** | **W** | **X** | **Y** | **Z**  | 
+| **O** | **P** | **Q** | **R** | **S** | **T** | **U** | **V** | **W** | **X** | **Y** | **Z**  |
 | 24    | 25    | 26    | 27    | 28    | 29    | 30    | 31    | 32    | 33    | 34    | 35     |
 
 Anytime you want to give a numeric value, you can give a letter as well.
@@ -105,116 +105,11 @@ The inputs and outputs are generally going to be on the top, bottom, or sides of
 
 For example, take the D operator. It has two <span class="argument">inputs</span> and one <span class="output">output</span>.
 
-<div class='operator-example'>
-<div class='operator-row'>
-<div class='operator-cell'>
-.
-</div>
-<div class='operator-cell'>
-.
-</div>
-<div class='operator-cell'>
-.
-</div>
-</div>
-
-<div class='operator-row'>
-<div class='operator-cell tooltip argument'>
-<span class="tooltiptext">the first input: the rate</span>
-8
-</div>
-<div class='operator-cell tooltip'>
-<span class="tooltiptext tooltip">the operator</span>
-D
-</div>
-<div class='operator-cell tooltip argument'>
-<span class="tooltiptext">the second input: the modulo</span>
-2
-</div>
-</div> 
-
-<div class='operator-row'>
-<div class='operator-cell '>
-.
-</div>
-<div class='operator-cell tooltip output'>
-<span class="tooltiptext tooltip">the output: a bang</span>
-*
-</div>
-<div class='operator-cell'>
-.
-</div>
-</div>
-</div> <!-- example -->
+<div class='operator' data-operator='D'></div>
 
 Other operators have a larger number of inptus an outputs. For example, take X - it has three <span class='argument'>inputs</span> and one <span class='output'>output</span>:
-<div class='operator-example'>
-<div class='operator-row'>
-<div class='operator-cell'>
-.
-</div>
-<div class='operator-cell'>
-.
-</div>
-<div class='operator-cell'>
-.
-</div>
-<div class='operator-cell'>
-.
-</div>
-</div>
 
-<div class='operator-row'>
-<div class='operator-cell tooltip argument'>
-<span class="tooltiptext">an x coordinate relative to the operator</span>
-1
-</div>
-<div class='operator-cell tooltip argument'>
-<span class="tooltiptext tooltip">a y coordinate relative to the operator</span>
-1
-</div>
-<div class='operator-cell tooltip'>
-<span class="tooltiptext">the operator</span>
-X
-</div>
-<div class='operator-cell tooltip argument'>
-<span class="tooltiptext">the third input: a value</span>
-7
-</div>
-</div>
-
-<div class='operator-row'>
-<div class='operator-cell '>
-.
-</div>
-<div class='operator-cell '>
-.
-</div>
-<div class='operator-cell '>
-.
-</div>
-<div class='operator-cell '>
-.
-</div>
-</div>
-
-<div class='operator-row'>
-<div class='operator-cell '>
-.
-</div>
-<div class='operator-cell '>
-.
-</div>
-<div class='operator-cell '>
-.
-</div>
-<div class='operator-cell tooltip output'>
-<span class="tooltiptext tooltip">the output: the input value offset by x, -y</span>
-7
-</div>
-</div>
-</div> <!-- example -->
-
+<div class='operator' data-operator='X'></div>
 
 ### bangs
 
@@ -229,7 +124,7 @@ Orca has a few relevant components related to timing:
 
  - clock
  - frames
- - tempo 
+ - tempo
 
 ### clock
 
@@ -266,95 +161,26 @@ For the purposes of learning, the easiest way to start making some sound is by u
 The midi operator takes five <span class="arguments">inputs</span>. It has zero Orca <span class="output">outputs</span>
 but as you  might expect, sends a midi message to a midi device.
 
-<div class='operator-example'>
-<div class='operator-row'>
-<div class='operator-cell'>
-.
-</div>
-<div class='operator-cell'>
-.
-</div>
-<div class='operator-cell'>
-.
-</div>
-<div class='operator-cell'>
-.
-</div>
-<div class='operator-cell'>
-.
-</div>
-<div class='operator-cell'>
-.
-</div>
-</div>
-
-<div class='operator-row'>
-<div class='operator-cell tooltip'>
-<span class="tooltiptext">the operator</span>
-:
-</div>
-<div class='operator-cell tooltip argument'>
-<span class="tooltiptext tooltip">a midi channel to send messages on (A = channel 10)</span>
-A
-</div>
-<div class='operator-cell tooltip argument'>
-<span class="tooltiptext">an octave</span>
-2
-</div>
-<div class='operator-cell tooltip argument'>
-<span class="tooltiptext">a note value</span>
-F
-</div>
-<div class='operator-cell tooltip argument'>
-<span class="tooltiptext">a velocity value</span>
-5
-</div>
-<div class='operator-cell tooltip argument'>
-<span class="tooltiptext">a duration value</span>
-1
-</div>
-</div>
-
-<div class='operator-row'>
-<div class='operator-cell '>
-.
-</div>
-<div class='operator-cell '>
-.
-</div>
-<div class='operator-cell '>
-.
-</div>
-<div class='operator-cell '>
-.
-</div>
-<div class='operator-cell '>
-.
-</div>
-<div class='operator-cell '>
-.
-</div>
-</div>
-</div>
+<div class='operator' data-operator=':'></div>
 
 ### transpose table
 
 The midi operator interprets any letter above the chromatic scale as a transpose value, for instance 3H, is equivalent to 4A.
 
-| **0** | **1** | **2** | **3** | **4** | **5** | **6** | **7** | **8** | **9** | **A** | **B**  | 
-| :-:   | :-:   | :-:   | :-:   | :-:   | :-:   | :-:   | :-:   | :-:   | :-:   | :-:   | :-:    | 
+| **0** | **1** | **2** | **3** | **4** | **5** | **6** | **7** | **8** | **9** | **A** | **B**  |
+| :-:   | :-:   | :-:   | :-:   | :-:   | :-:   | :-:   | :-:   | :-:   | :-:   | :-:   | :-:    |
 | _     | _     | _     | _     | _     | _     | _     | _     | _     | _     | A0    | B0     |
 | **C** | **D** | **E** | **F** | **G** | **H** | **I** | **J** | **K** | **L** | **M** | **N**  |
-| C0    | D0    | E0    | F0    | G0    | A0    | B0    | C1    | D1    | E1    | F1    | G1     | 
-| **O** | **P** | **Q** | **R** | **S** | **T** | **U** | **V** | **W** | **X** | **Y** | **Z**  | 
-| A1    | B1    | C2    | D2    | E2    | F2    | G2    | A2    | B2    | C3    | D3    | E3     | 
+| C0    | D0    | E0    | F0    | G0    | A0    | B0    | C1    | D1    | E1    | F1    | G1     |
+| **O** | **P** | **Q** | **R** | **S** | **T** | **U** | **V** | **W** | **X** | **Y** | **Z**  |
+| A1    | B1    | C2    | D2    | E2    | F2    | G2    | A2    | B2    | C3    | D3    | E3     |
 
 
 ### banging away
 
 However, you'll need to somehow send a bang to the operator.
 Go ahead and try checking out some of the instruments that are already wired up via [Enfer][enfer].
-An easy one to start with is the D operator.
+An easy one to start with is the D (delay) operator.
 
 Try adding the following:
 ```orca
@@ -362,53 +188,16 @@ Try adding the following:
 ..:03cf5
 ```
 and making sure the clock is on my pressing space. Boom! We've made our first notes.
-Quickly, I'm sure you'll find a single repeating note annoying. Why don't we add some chaos?
+Quickly, I'm sure you'll find a single repeating note annoying.
+
+Don't forget you can press *space* to turn on or off the [clock](#clock).
+Why don't we add some chaos?
 
 ## randomization
 
-We can add a random note value by using the R operator.
+We can add a random note value by using the R (random) operator.
 
-<div class='operator-example'>
-<div class='operator-row'>
-<div class='operator-cell'>
-.
-</div>
-<div class='operator-cell'>
-.
-</div>
-<div class='operator-cell'>
-.
-</div>
-</div>
-
-<div class='operator-row'>
-<div class='operator-cell tooltip argument'>
-<span class="tooltiptext">the first input: the minimum random value</span>
-a
-</div>
-<div class='operator-cell tooltip'>
-<span class="tooltiptext tooltip">the operator</span>
-R
-</div>
-<div class='operator-cell tooltip argument'>
-<span class="tooltiptext">the second input: the maximum random value</span>
-z
-</div>
-</div> 
-
-<div class='operator-row'>
-<div class='operator-cell '>
-.
-</div>
-<div class='operator-cell tooltip output'>
-<span class="tooltiptext tooltip">the output: a random value</span>
-t
-</div>
-<div class='operator-cell'>
-.
-</div>
-</div>
-</div> <!-- example -->
+<div class='operator' data-operator='R'></div>
 
 So, lets try putting it above our note argument:
 
@@ -419,49 +208,9 @@ So, lets try putting it above our note argument:
 
 ## regularization
 
-We can also create something interesting by varying regularly. One useful operator for this is the C operator.
+We can also create something interesting by varying regularly. One useful operator for this is the C (clock) operator.
 
-<div class='operator-example'>
-<div class='operator-row'>
-<div class='operator-cell'>
-.
-</div>
-<div class='operator-cell'>
-.
-</div>
-<div class='operator-cell'>
-.
-</div>
-</div>
-
-<div class='operator-row'>
-<div class='operator-cell tooltip argument'>
-<span class="tooltiptext">the first input: the rate</span>
-2
-</div>
-<div class='operator-cell tooltip'>
-<span class="tooltiptext tooltip">the operator</span>
-C
-</div>
-<div class='operator-cell tooltip argument'>
-<span class="tooltiptext">the second input: the modulo</span>
-7
-</div>
-</div> 
-
-<div class='operator-row'>
-<div class='operator-cell '>
-.
-</div>
-<div class='operator-cell tooltip output'>
-<span class="tooltiptext tooltip">the output: the clock value</span>
-4
-</div>
-<div class='operator-cell'>
-.
-</div>
-</div>
-</div>
+<div class='operator' data-operator='C'></div>
 
 Try running the following:
 
@@ -491,11 +240,21 @@ Now lets make four of them!
 ..:03cf5
 ```
 
+Granted, this is starting to sound kind of crazy. Instead of just random notes, let's set up a T (tracker) operator.
+The T operator takes at minimum 3 <span class="arguments">inputs</span>. We say at minimum because one of the arguments
+*determines* how many arguments there are on the right side.
+
+<div class='operator' data-operator='T'></div>
+
+T operators are nice because we can specify a sequence of notes that we are interested in and we can also
+control how often we change between them, as well as which ones we want to change to. However, as you can see,
+we're starting to get a little crowded. Two operators we can use to space things out are the Y and J operators.
+
 # contributing
 
 If you find this guide useful, and would like to contribute, PRs are welcome [here][learn-orca].
 If you find [Orca][orca] or [Enfer][enfer] useful; please support [hunred rabbits][support].
- 
+
 <!-- LINKS -->
 [learn-orca]: https://github.com/metasyn/learn-orca
 [enfer]: https://github.com/neauoire/Enfer

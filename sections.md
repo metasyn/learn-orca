@@ -103,7 +103,7 @@ will operate on every [frame](#frames).
 Most operators take some number of inputs and produce some number of inputs.
 The inputs and outputs are generally going to be on the top, bottom, or sides of the operator.
 
-For example, take the D operator. It has two <span class="argument">inputs</span> and one <span class="output">output</span>.
+For example, take the D operator. It has two <span class='argument'>inputs</span> and one <span class='output'>output</span>.
 
 <div class='operator' data-operator='D'></div>
 
@@ -158,7 +158,7 @@ Decr. Speed(10x)......... CmdOrCtrl+<
 
 ## the midi operator
 For the purposes of learning, the easiest way to start making some sound is by using the midi operator.
-The midi operator takes five <span class="arguments">inputs</span>. It has zero Orca <span class="output">outputs</span>
+The midi operator takes five <span class='argument'>inputs</span>. It has zero Orca <span class='output'>outputs</span>
 but as you  might expect, sends a midi message to a midi device.
 
 <div class='operator' data-operator=':'></div>
@@ -234,7 +234,7 @@ After that, simply copy and paste to a new section.
 ```
 
 Granted, this is starting to sound kind of crazy. Instead of just random notes, let's set up a T (tracker) operator.
-The T operator takes at minimum 3 <span class="arguments">inputs</span>. We say at minimum because one of the arguments
+The T operator takes at minimum 3 <span class='argument'>inputs</span>. We say at minimum because one of the arguments
 *determines* how many arguments there are on the right side.
 
 <div class='operator' data-operator='T'></div>
@@ -243,11 +243,11 @@ T operators are nice because we can specify a sequence of notes that we are inte
 control how often we change between them, as well as which ones we want to change to. However, as you can see,
 we're starting to get a little crowded. Two operators we can use to space things out are the Y and J operators.
 
-The Y operator moves a value from the <span class="arguments">left</span> to the <span class="output">right</span>:
+The Y operator moves a value from the <span class='argument'>left</span> to the <span class='output'>right</span>:
 
 <div class='operator' data-operator='Y'></div>
 
-The J operator moves a value from the <span class="arguments">top</span> to the <span class="output">bottom</span>:
+The J operator moves a value from the <span class='argument'>top</span> to the <span class='output'>bottom</span>:
 
 <div class='operator' data-operator='J'></div>
 

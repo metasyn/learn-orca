@@ -107,7 +107,7 @@ For example, take the D operator. It has two <span class='argument'>inputs</span
 
 <div class='operator' data-operator='D'></div>
 
-Other operators have a larger number of inptus an outputs. For example, take X - it has three <span class='argument'>inputs</span> and one <span class='output'>output</span>:
+Other operators have a larger number of inputs an outputs. For example, take X - it has three <span class='argument'>inputs</span> and one <span class='output'>output</span>:
 
 <div class='operator' data-operator='X'></div>
 
@@ -129,14 +129,14 @@ Orca has a few relevant components related to timing:
 ### clock
 
 The clock can be started and stop with the spacebar. If a midi
-device is contected as an input, the clock will be set from the
+device is connected as an input, the clock will be set from the
 midi device, and Orca will respond to midi start and stop
 messages.
 
 ### frames
 
 For each tick of the clock, we move forward a frame. Frames can
-be skiped or rewinded with an Orca command if needed, too. The
+be skipped or rewound with an Orca command if needed, too. The
 current frame number can be seen in the bottom right of the
 window.
 
@@ -236,7 +236,7 @@ After that, simply copy and paste to a new section. Let's also make some changes
 ..:02cf5
 ```
 
-Now we have a somewhat interesting mixture of regularization, and randomziation.
+Now we have a somewhat interesting mixture of regularization, and randomization.
 
 ## sequencing
 
@@ -285,7 +285,7 @@ One other simple operator that is really useful for adding some nuance is the F 
 
 ## percussion
 
-[Devine](devine) has conveiently added drum samples to the first octaves of the voices in [Enfer](enfer) which is where our synthesizers and sounds are actually coming from. Let's add a kick, snare, hi-hat and lead to our previous bassline.
+[Devine](devine) has conveniently added drum samples to the first octaves of the voices in [Enfer](enfer) which is where our synthesizers and sounds are actually coming from. Let's add a kick, snare, hi-hat and lead to our previous bass line.
 
 ```orca
 ..........................
@@ -349,7 +349,7 @@ When you're trying to read or write further away, there are two operators that a
 # contributing
 
 If you find this guide useful, and would like to contribute, PRs are welcome [here][learn-orca].
-If you find [Orca][orca] or [Enfer][enfer] useful; please support [hunred rabbits][support].
+If you find [Orca][orca] or [Enfer][enfer] useful; please support [hundred rabbits][support].
 
 <!-- LINKS -->
 [learn-orca]: https://github.com/metasyn/learn-orca

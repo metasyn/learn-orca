@@ -33,6 +33,14 @@
     </ul></li>
     <li><a href="#randomization">randomization</a></li>
     <li><a href="#regularization">regularization</a></li>
+    <li><a href="#sequencing">sequencing</a></li>
+    <li><a href="#simple-math">simple math</a></li>
+    <li><a href="#percussion">percussion</a></li>
+    </ul></li>
+    <li><a href="#organization">organization</a>
+    <ul>
+    <li><a href="#jumping-around">jumping around</a></li>
+    <li><a href="#writing-querying">writing &amp; querying</a></li>
     </ul></li>
     <li><a href="#contributing">contributing</a></li>
     </ul>
@@ -73,7 +81,7 @@
   </section>
   <section id="cursor" class="level3">
   <h3>cursor</h3>
-  <p>Lastly, there is a concept of a cursor mode, kind of like VIM. Normally, typing will only edit value under the head of the cursor (the @ sign). If you switch to insert mode, you can type and the cursor head will auto advance.</p>
+  <p>Lastly, there is a concept of a cursor mode, kind of like VIM. Normally, typing will only edit values under the head of the cursor (the @ sign). If you switch to insert mode, you can type and the cursor head will auto advance.</p>
   <pre><code>Toggle Insert Mode....... CmdOrCtrl+I
   Toggle Block Comment..... CmdOrCtrl+/
   Trigger Operator......... CmdOrCtrl+P
@@ -348,7 +356,7 @@
 
   </div>
   <p>So, lets try putting it above our note argument:</p>
-  <pre class="orca"><code>.D..aRz.
+  <pre class="orca"><code>.D..aRf.
   ..:03cf5</code></pre>
   </section>
   <section id="regularization" class="level2">
@@ -359,33 +367,33 @@
   </div>
   <p>Try running the following:</p>
   <pre class="orca"><code>..C.....
-  .D..aRz.
+  .D..aRf.
   ..:03cf5</code></pre>
-  <p>Now lets make two of them! Remember you can drag with the mouse or just use the arrow keys and shift to select a section. After that, simply copy and paste to a new section.</p>
+  <p>Now lets make two of them! Remember you can drag with the mouse or just use the arrow keys and shift to select a section. After that, simply copy and paste to a new section. Let’s also make some changes:</p>
+  <ul>
+  <li>remove the clock from one of the items and replace it with a constant value (2).</li>
+  <li>move the octave down one</li>
+  </ul>
   <pre class="orca"><code>..C.....
-  .D..aRz.
+  .D..aRf.
   ..:03cf5
 
-  ..C.....
-  .D..aRz.
-  ..:03cf5</code></pre>
-  <p>Granted, this is starting to sound kind of crazy. Instead of just random notes, let’s set up a T (tracker) operator. The T operator takes at minimum 3 <span class="argument">inputs</span>. We say at minimum because one of the arguments <em>determines</em> how many arguments there are on the right side.</p>
+  ........
+  .D2.aRf.
+  ..:02cf5</code></pre>
+  <p>Now we have a somewhat interesting mixture of regularization, and randomziation.</p>
+  </section>
+  <section id="sequencing" class="level2">
+  <h2>sequencing</h2>
+  <p>What if we wanted to specify a particular sequence of notes, rather than choosing them randomly?</p>
+  <p>One of the most essential operators for sequencing is the T (tracker) operator. The T operator takes at minimum 3 <span class="argument">inputs</span>. We say at minimum because one of the arguments <em>determines</em> how many arguments there are on the right side.</p>
   <div class="operator" data-operator="T">
 
   </div>
-  <p>T operators are nice because we can specify a sequence of notes that we are interested in and we can also control how often we change between them, as well as which ones we want to change to. However, as you can see, we’re starting to get a little crowded. Two operators we can use to space things out are the Y and J operators.</p>
-  <p>The Y operator moves a value from the <span class="argument">left</span> to the <span class="output">right</span>:</p>
-  <div class="operator" data-operator="Y">
-
-  </div>
-  <p>The J operator moves a value from the <span class="argument">top</span> to the <span class="output">bottom</span>:</p>
-  <div class="operator" data-operator="J">
-
-  </div>
-  <p>We can use these when things start to feel too tight. Let’s start by establishing an interesting or fun sequence with the T operator, then moving the value it prodces down into the note selection area for a midi operator. Here’s what we’ll do:</p>
+  <p>T operators are nice because we can specify a sequence of notes that we are interested in and we can also control how often we change between them, as well as which ones we want to change to. Let’s start by establishing an interesting or fun sequence with the T operator, then moving the operand it produces down into the note selection area for a midi operator. Here’s what we’ll do:</p>
   <ul>
   <li>add a T operator to establish a sequence</li>
-  <li>use a C operator to add an increasing tick to move the selection we have on T’s values</li>
+  <li>use a C operator to add an increasing tick to move the selection we have on T’s operands</li>
   <li>remove the R operator and replace it with a J, which will insert the note into our midi operator.</li>
   </ul>
   <pre class="orca"><code>...C...........
@@ -395,6 +403,79 @@
   ..:32Ef5.......
   ...............</code></pre>
   <p>Wait! It sounds different. Note that we also changed the midi operator’s channel and octave. We’re now sending a much lower note to a different instrument. Try changing it yourself.</p>
+  </section>
+  <section id="simple-math" class="level2">
+  <h2>simple math</h2>
+  <p>There are few operators for give us some basic math skills. These will prove invaluable when adding nuance to your creation. The first is the A operator, which, maybe predictably, is for addition:</p>
+  <div class="operator" data-operator="A">
+
+  </div>
+  <p>After that, we have the B operator, which takes the difference of two operands:</p>
+  <div class="operator" data-operator="B">
+
+  </div>
+  <p>One other simple operator that is really useful for adding some nuance is the F operator. The F operator checks for quality, and bangs if its true.</p>
+  <div class="operator" data-operator="F">
+
+  </div>
+  </section>
+  <section id="percussion" class="level2">
+  <h2>percussion</h2>
+  <p><a href="devine">Devine</a> has conveiently added drum samples to the first octaves of the voices in <a href="enfer">Enfer</a> which is where our synthesizers and sounds are actually coming from. Let’s add a kick, snare, hi-hat and lead to our previous bassline.</p>
+  <pre class="orca"><code>..........................
+  .#.sequence.#..#..kick..#.
+  ..........................
+  ...C.............C........
+  ...38TCFGACFE....3F6......
+  ..C..A.............:30cff.
+  .D3..J....................
+  .*:32Af5..................
+  ..........................
+  .#..snare...#...#..hat..#.
+  ..........................
+  ...C..............0R4.....
+  ...3F2.............1B2....
+  .....:10eff.......fC1.....
+  .................2B0......
+  ................2D2.......
+  ..................:10hff..
+  ..........................
+  .#.........lead.........#.
+  ..........................
+  .....4Cf..................
+  ....D40fT...C..E.F.D..G...
+  .....:85.ff...............
+  ..........................
+  .....2....................
+  ..........................</code></pre>
+  <p>With that, we’ve made our first little tune!</p>
+  </section>
+  </section>
+  <section id="organization" class="level1">
+  <h1>organization</h1>
+  <section id="jumping-around" class="level2">
+  <h2>jumping around</h2>
+  <p>As you can probably imagine, sometimes things can get a little crowded. Two operators we can use to space things out are the J (jumper) and Y (jymper) operators.</p>
+  <p>The Y operator moves an operand from the <span class="argument">left</span> to the <span class="output">right</span>:</p>
+  <div class="operator" data-operator="Y">
+
+  </div>
+  <p>The J operator moves an operand from the <span class="argument">top</span> to the <span class="output">bottom</span>:</p>
+  <div class="operator" data-operator="J">
+
+  </div>
+  <p>We can use these when things start to feel too tight - or if you need to move an operator around a bit.</p>
+  </section>
+  <section id="writing-querying" class="level2">
+  <h2>writing &amp; querying</h2>
+  <p>When you’re trying to read or write further away, there are two operators that are particularly relevant:</p>
+  <ul>
+  <li>X (write) : write operands at an offset</li>
+  <li>Q (query) : reads operands at an offset</li>
+  </ul>
+  <div class="operator" data-operator="X">
+
+  </div>
   </section>
   </section>
   <section id="contributing" class="level1">

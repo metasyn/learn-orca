@@ -2,7 +2,7 @@
 
 learn-orca is a site for learning how to use [Orca](https://github.com/hundredrabbits/Orca).
 
-# setup
+# developing
 
 Requires [pandoc](https://pandoc.org)
 
@@ -17,7 +17,7 @@ To make/update the sections:
 make pandoc
 ```
 
-To make/update the examples:
+To make/update the examples (requires python3):
 ```
 make examples
 ```
@@ -26,7 +26,7 @@ If you're developing, you can run:
 ```
 make serve
 ```
-to start a simple web server for testing.
+to start a simple web server for testing (requires python3).
 
 You can run:
 ```
@@ -34,13 +34,13 @@ make watch
 ```
 to automatically call pandoc on files changes. This requires [fswatch](https://github.com/emcrisostomo/fswatch).
 
-Additionally you can format and lint your javascript with:
+Formatting and linting - If you have eslint and prettier installed, you can run:
 ```
 make format
 make lint
 ```
-
 which should help you find bugs/issues in the code.
+You can install them with `npm install`.
 
 # adding sections
 
@@ -49,6 +49,14 @@ Simply update `sections.md` and run `make pandoc`.
 # adding operators
 
 Operators are in `js/main.js`. Each operator specifies some rows, inputs, and outputs.
+
+# contributing
+
+* make changes
+* run `make pandoc` if needed
+* run the linter and formatter
+* does the site load? do examples load?
+* make a PR!
 
 
 # license

@@ -109,7 +109,9 @@ For example, take the D operator. It has two <span class='argument'>inputs</span
 
 Other operators have a larger number of inputs an outputs. For example, take X - it has three <span class='argument'>inputs</span> and one <span class='output'>output</span>:
 
+
 <div class='operator' data-operator='X'></div>
+
 
 ### bangs
 
@@ -230,7 +232,7 @@ After that, simply copy and paste to a new section. Let's also make some changes
 ..C.....
 .D..aRf.
 ..:03cf5
-
+........
 ........
 .D2.aRf.
 ..:02cf5
@@ -263,7 +265,6 @@ operator, then moving the operand it produces down into the note selection area 
 ..C..E.........
 .D6..J.........
 ..:32Ef5.......
-...............
 ```
 
 Wait! It sounds different. Note that we also changed the midi operator's channel and octave. We're now sending a much lower note to a different instrument. Try changing it yourself.

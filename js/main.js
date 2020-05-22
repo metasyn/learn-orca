@@ -42,7 +42,11 @@ function loadOrca(string) {
 
 function addOrcaSnippetListeners() {
   document.querySelectorAll('pre.orca').forEach((thing) => thing.addEventListener('click', (event) => {
-    loadOrca(event.target.innerText);
+    const contents = event.target.innerHTML;
+    // sometimes pandoc adds some spaces
+    // which we can remove
+    const stripped = contents.replace(/[ ]+/g, '');
+    loadOrca(stripped);
   }));
 }
 
@@ -100,34 +104,34 @@ function loadExample(name) {
 /* Operators */
 // ////////////
 
-function newCell() {
+const newCell = () => {
   const div = document.createElement('div');
   div.classList.add('operator-cell');
   return div;
-}
+};
 
-function addText(el, text) {
+const addText = (el, text) => {
   const p = document.createElement('p');
   const child = document.createTextNode(text);
   p.appendChild(child);
   el.appendChild(p);
-}
+};
 
-function emptyCell() {
+const emptyCell = () => {
   const cell = newCell();
   addText(cell, '.');
   return cell;
-}
+};
 
-function emptyCells(n) {
+const emptyCells = (n) => {
   const cells = [];
   for (let i = 0; i < n; i += 1) {
     cells.push(emptyCell());
   }
   return cells;
-}
+};
 
-function tooltipCell(value, text) {
+const tooltipCell = (value, text) => {
   const cell = newCell();
   cell.classList.add('tooltip');
   addText(cell, value);
@@ -138,28 +142,28 @@ function tooltipCell(value, text) {
   cell.appendChild(span);
 
   return cell;
-}
+};
 
-function argumentCell(value, text) {
+const argumentCell = (value, text) => {
   const cell = tooltipCell(value, text);
   cell.classList.add('argument');
   return cell;
-}
+};
 
-function outputCell(value, text) {
+const outputCell = (value, text) => {
   const cell = tooltipCell(value, text);
   cell.classList.add('output');
   return cell;
-}
+};
 
-function makeRow(cells) {
+const makeRow = (cells) => {
   const row = document.createElement('div');
   row.classList.add('operator-row');
   cells.forEach((cell) => {
     row.appendChild(cell || emptyCell());
   });
   return row;
-}
+};
 
 const operatorData = {
   A: {
@@ -313,7 +317,9 @@ function makeOperatorExample(operator) {
   const data = operatorData[name];
   data.rows.forEach((item) => {
     const row = item || emptyCells(data.length);
-    operator.appendChild(makeRow(row));
+    const el = makeRow(row);
+    const clone = el.cloneNode(true);
+    operator.appendChild(clone);
   });
 }
 

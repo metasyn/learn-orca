@@ -243,11 +243,11 @@ T operators are nice because we can specify a sequence of notes that we are inte
 control how often we change between them, as well as which ones we want to change to. However, as you can see,
 we're starting to get a little crowded. Two operators we can use to space things out are the Y and J operators.
 
-The Y operator moves a value from the left to the right:
+The Y operator moves a value from the <span class="arguments">left</span> to the <span class="output">right</span>:
 
 <div class='operator' data-operator='Y'></div>
 
-The J operator moves a value from the top to the bottom:
+The J operator moves a value from the <span class="arguments">top</span> to the <span class="output">bottom</span>:
 
 <div class='operator' data-operator='J'></div>
 

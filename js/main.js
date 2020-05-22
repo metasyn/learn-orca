@@ -75,8 +75,6 @@ function loadExamples() {
   `,
   };
 
-  debugger;
-
   const sorted = Object.keys(examples).sort();
 
   const dropDown = document.getElementById('examples-content');

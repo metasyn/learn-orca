@@ -1,4 +1,4 @@
-.PHONY: pandoc
+.PHONY: pandoc examples watch serve format lint
 
 pandoc:
 	pandoc \
@@ -13,3 +13,13 @@ examples:
 
 watch:
 	fswatch -0 sections.md | xargs -0 -I {} make pandoc
+
+serve:
+	python3 -m http.server 8000
+
+format:
+	prettier --write js/*
+	eslint --fix js/*
+
+lint:
+	eslint js/*

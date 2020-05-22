@@ -188,102 +188,13 @@
   <p>Operators come in two main flavors: lower-case and upper-case. Lower-case letters will operate on every <a href="#bang">bang</a>, and upper-case letters will operate on every <a href="#frames">frame</a>.</p>
   <p>Most operators take some number of inputs and produce some number of inputs. The inputs and outputs are generally going to be on the top, bottom, or sides of the operator.</p>
   <p>For example, take the D operator. It has two <span class="argument">inputs</span> and one <span class="output">output</span>.</p>
-  <div class="operator-example">
-  <div class="operator-row">
-  <div class="operator-cell">
-  <p>.</p>
+  <div class="operator" data-operator="D">
+
   </div>
-  <div class="operator-cell">
-  <p>.</p>
+  <p>Other operators have a larger number of inptus an outputs. For example, take X - it has three <span class="argument">inputs</span> and one <span class="output">output</span>:</p>
+  <div class="operator" data-operator="X">
+
   </div>
-  <div class="operator-cell">
-  <p>.</p>
-  </div>
-  </div>
-  <div class="operator-row">
-  <div class="operator-cell tooltip argument">
-  <p><span class="tooltiptext">the first input: the rate</span> 8</p>
-  </div>
-  <div class="operator-cell tooltip">
-  <p><span class="tooltiptext tooltip">the operator</span> D</p>
-  </div>
-  <div class="operator-cell tooltip argument">
-  <p><span class="tooltiptext">the second input: the modulo</span> 2</p>
-  </div>
-  </div>
-  <div class="operator-row">
-  <div class="operator-cell">
-  <p>.</p>
-  </div>
-  <div class="operator-cell tooltip output">
-  <p><span class="tooltiptext tooltip">the output: a bang</span> *</p>
-  </div>
-  <div class="operator-cell">
-  <p>.</p>
-  </div>
-  </div>
-  </div>
-  <p><!-- example --></p>
-  Other operators have a larger number of inptus an outputs. For example, take X - it has three <span class="argument">inputs</span> and one <span class="output">output</span>:
-  <div class="operator-example">
-  <div class="operator-row">
-  <div class="operator-cell">
-  <p>.</p>
-  </div>
-  <div class="operator-cell">
-  <p>.</p>
-  </div>
-  <div class="operator-cell">
-  <p>.</p>
-  </div>
-  <div class="operator-cell">
-  <p>.</p>
-  </div>
-  </div>
-  <div class="operator-row">
-  <div class="operator-cell tooltip argument">
-  <p><span class="tooltiptext">an x coordinate relative to the operator</span> 1</p>
-  </div>
-  <div class="operator-cell tooltip argument">
-  <p><span class="tooltiptext tooltip">a y coordinate relative to the operator</span> 1</p>
-  </div>
-  <div class="operator-cell tooltip">
-  <p><span class="tooltiptext">the operator</span> X</p>
-  </div>
-  <div class="operator-cell tooltip argument">
-  <p><span class="tooltiptext">the third input: a value</span> 7</p>
-  </div>
-  </div>
-  <div class="operator-row">
-  <div class="operator-cell">
-  <p>.</p>
-  </div>
-  <div class="operator-cell">
-  <p>.</p>
-  </div>
-  <div class="operator-cell">
-  <p>.</p>
-  </div>
-  <div class="operator-cell">
-  <p>.</p>
-  </div>
-  </div>
-  <div class="operator-row">
-  <div class="operator-cell">
-  <p>.</p>
-  </div>
-  <div class="operator-cell">
-  <p>.</p>
-  </div>
-  <div class="operator-cell">
-  <p>.</p>
-  </div>
-  <div class="operator-cell tooltip output">
-  <p><span class="tooltiptext tooltip">the output: the input value offset by x, -y</span> 7</p>
-  </div>
-  </div>
-  </div>
-  <p><!-- example --></p>
   </section>
   <section id="bangs" class="level3">
   <h3>bangs</h3>
@@ -323,67 +234,8 @@
   <section id="the-midi-operator" class="level2">
   <h2>the midi operator</h2>
   <p>For the purposes of learning, the easiest way to start making some sound is by using the midi operator. The midi operator takes five <span class="arguments">inputs</span>. It has zero Orca <span class="output">outputs</span> but as you might expect, sends a midi message to a midi device.</p>
-  <div class="operator-example">
-  <div class="operator-row">
-  <div class="operator-cell">
-  <p>.</p>
-  </div>
-  <div class="operator-cell">
-  <p>.</p>
-  </div>
-  <div class="operator-cell">
-  <p>.</p>
-  </div>
-  <div class="operator-cell">
-  <p>.</p>
-  </div>
-  <div class="operator-cell">
-  <p>.</p>
-  </div>
-  <div class="operator-cell">
-  <p>.</p>
-  </div>
-  </div>
-  <div class="operator-row">
-  <div class="operator-cell tooltip">
-  <p><span class="tooltiptext">the operator</span> :</p>
-  </div>
-  <div class="operator-cell tooltip argument">
-  <p><span class="tooltiptext tooltip">a midi channel to send messages on (A = channel 10)</span> A</p>
-  </div>
-  <div class="operator-cell tooltip argument">
-  <p><span class="tooltiptext">an octave</span> 2</p>
-  </div>
-  <div class="operator-cell tooltip argument">
-  <p><span class="tooltiptext">a note value</span> F</p>
-  </div>
-  <div class="operator-cell tooltip argument">
-  <p><span class="tooltiptext">a velocity value</span> 5</p>
-  </div>
-  <div class="operator-cell tooltip argument">
-  <p><span class="tooltiptext">a duration value</span> 1</p>
-  </div>
-  </div>
-  <div class="operator-row">
-  <div class="operator-cell">
-  <p>.</p>
-  </div>
-  <div class="operator-cell">
-  <p>.</p>
-  </div>
-  <div class="operator-cell">
-  <p>.</p>
-  </div>
-  <div class="operator-cell">
-  <p>.</p>
-  </div>
-  <div class="operator-cell">
-  <p>.</p>
-  </div>
-  <div class="operator-cell">
-  <p>.</p>
-  </div>
-  </div>
+  <div class="operator" data-operator=":">
+
   </div>
   <section id="transpose-table" class="level3">
   <h3>transpose table</h3>
@@ -481,93 +333,29 @@
   </section>
   <section id="banging-away" class="level3">
   <h3>banging away</h3>
-  <p>However, you’ll need to somehow send a bang to the operator. Go ahead and try checking out some of the instruments that are already wired up via <a href="https://github.com/neauoire/Enfer">Enfer</a>. An easy one to start with is the D operator.</p>
+  <p>However, you’ll need to somehow send a bang to the operator. Go ahead and try checking out some of the instruments that are already wired up via <a href="https://github.com/neauoire/Enfer">Enfer</a>. An easy one to start with is the D (delay) operator.</p>
   <p>Try adding the following:</p>
   <pre class="orca"><code>.D......
   ..:03cf5</code></pre>
-  <p>and making sure the clock is on my pressing space. Boom! We’ve made our first notes. Quickly, I’m sure you’ll find a single repeating note annoying. Why don’t we add some chaos?</p>
+  <p>and making sure the clock is on my pressing space. Boom! We’ve made our first notes. Quickly, I’m sure you’ll find a single repeating note annoying.</p>
+  <p>Don’t forget you can press <em>space</em> to turn on or off the <a href="#clock">clock</a>. Why don’t we add some chaos?</p>
   </section>
   </section>
   <section id="randomization" class="level2">
   <h2>randomization</h2>
-  <p>We can add a random note value by using the R operator.</p>
-  <div class="operator-example">
-  <div class="operator-row">
-  <div class="operator-cell">
-  <p>.</p>
+  <p>We can add a random note value by using the R (random) operator.</p>
+  <div class="operator" data-operator="R">
+
   </div>
-  <div class="operator-cell">
-  <p>.</p>
-  </div>
-  <div class="operator-cell">
-  <p>.</p>
-  </div>
-  </div>
-  <div class="operator-row">
-  <div class="operator-cell tooltip argument">
-  <p><span class="tooltiptext">the first input: the minimum random value</span> a</p>
-  </div>
-  <div class="operator-cell tooltip">
-  <p><span class="tooltiptext tooltip">the operator</span> R</p>
-  </div>
-  <div class="operator-cell tooltip argument">
-  <p><span class="tooltiptext">the second input: the maximum random value</span> z</p>
-  </div>
-  </div>
-  <div class="operator-row">
-  <div class="operator-cell">
-  <p>.</p>
-  </div>
-  <div class="operator-cell tooltip output">
-  <p><span class="tooltiptext tooltip">the output: a random value</span> t</p>
-  </div>
-  <div class="operator-cell">
-  <p>.</p>
-  </div>
-  </div>
-  </div>
-  <p><!-- example --></p>
   <p>So, lets try putting it above our note argument:</p>
   <pre class="orca"><code>.D..aRz.
   ..:03cf5</code></pre>
   </section>
   <section id="regularization" class="level2">
   <h2>regularization</h2>
-  <p>We can also create something interesting by varying regularly. One useful operator for this is the C operator.</p>
-  <div class="operator-example">
-  <div class="operator-row">
-  <div class="operator-cell">
-  <p>.</p>
-  </div>
-  <div class="operator-cell">
-  <p>.</p>
-  </div>
-  <div class="operator-cell">
-  <p>.</p>
-  </div>
-  </div>
-  <div class="operator-row">
-  <div class="operator-cell tooltip argument">
-  <p><span class="tooltiptext">the first input: the rate</span> 2</p>
-  </div>
-  <div class="operator-cell tooltip">
-  <p><span class="tooltiptext tooltip">the operator</span> C</p>
-  </div>
-  <div class="operator-cell tooltip argument">
-  <p><span class="tooltiptext">the second input: the modulo</span> 7</p>
-  </div>
-  </div>
-  <div class="operator-row">
-  <div class="operator-cell">
-  <p>.</p>
-  </div>
-  <div class="operator-cell tooltip output">
-  <p><span class="tooltiptext tooltip">the output: the clock value</span> 4</p>
-  </div>
-  <div class="operator-cell">
-  <p>.</p>
-  </div>
-  </div>
+  <p>We can also create something interesting by varying regularly. One useful operator for this is the C (clock) operator.</p>
+  <div class="operator" data-operator="C">
+
   </div>
   <p>Try running the following:</p>
   <pre class="orca"><code>..C.....
@@ -589,6 +377,11 @@
   ..C.....
   .D..aRz.
   ..:03cf5</code></pre>
+  <p>Granted, this is starting to sound kind of crazy. Instead of just random notes, let’s set up a T (tracker) operator. The T operator takes at minimum 3 <span class="arguments">inputs</span>. We say at minimum because one of the arguments <em>determines</em> how many arguments there are on the right side.</p>
+  <div class="operator" data-operator="T">
+
+  </div>
+  <p>T operators are nice because we can specify a sequence of notes that we are interested in and we can also control how often we change between them, as well as which ones we want to change to. However, as you can see, we’re starting to get a little crowded. Two operators we can use to space things out are the Y and J operators.</p>
   </section>
   </section>
   <section id="contributing" class="level1">

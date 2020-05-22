@@ -220,17 +220,10 @@ Try running the following:
 ..:03cf5
 ```
 
-Now lets make four of them!
+Now lets make two of them! Remember you can drag with the mouse or just use the arrow keys and shift to select a section.
+After that, simply copy and paste to a new section.
 
 ```orca
-..C.....
-.D..aRz.
-..:03cf5
-
-..C.....
-.D..aRz.
-..:03cf5
-
 ..C.....
 .D..aRz.
 ..:03cf5
@@ -249,6 +242,34 @@ The T operator takes at minimum 3 <span class="arguments">inputs</span>. We say 
 T operators are nice because we can specify a sequence of notes that we are interested in and we can also
 control how often we change between them, as well as which ones we want to change to. However, as you can see,
 we're starting to get a little crowded. Two operators we can use to space things out are the Y and J operators.
+
+The Y operator moves a value from the left to the right:
+
+<div class='operator' data-operator='Y'></div>
+
+The J operator moves a value from the top to the bottom:
+
+<div class='operator' data-operator='J'></div>
+
+We can use these when things start to feel too tight. Let's start by establishing an interesting or fun sequence with the T
+operator, then moving the value it prodces down into the note selection area for a midi operator. Here's what we'll do:
+
+- add a T operator to establish a sequence
+- use a C operator to add an increasing tick to move the selection we have on T's values
+- remove the R operator and replace it with a J, which will insert the note into our midi operator.
+
+
+```orca
+...C...........
+...68TCFGACFE..
+..C..E.........
+.D6..J.........
+..:32Ef5.......
+...............
+```
+
+Wait! It sounds different. Note that we also changed the midi operator's channel and octave. We're now sending a much lower note to a different instrument. Try changing it yourself.
+
 
 # contributing
 

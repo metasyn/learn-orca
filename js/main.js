@@ -75,6 +75,8 @@ function loadExamples() {
   `,
   };
 
+  debugger;
+
   const sorted = Object.keys(examples).sort();
 
   const dropDown = document.getElementById('examples-content');
@@ -186,6 +188,14 @@ const operatorData = {
       [null, outputCell('*', 'the output: a bang'), null],
     ],
   },
+  J: {
+    length: 3,
+    rows: [
+      [null, argumentCell('9', 'the input: some value'), null],
+      [null, tooltipCell('J', 'the operator'), null],
+      [null, outputCell('9', 'the output: the input value'), null],
+    ],
+  },
   R: {
     length: 3,
     rows: [
@@ -209,7 +219,13 @@ const operatorData = {
         argumentCell('E', 'the argument at index 0'),
         argumentCell('A', 'the argument at index 1'),
       ],
-      [null, null, outputCell('A', 'the output: the value of the selected argument'), null, null],
+      [
+        null,
+        null,
+        outputCell('A', 'the output: the value of the selected argument'),
+        null,
+        null,
+      ],
     ],
   },
   X: {
@@ -224,6 +240,18 @@ const operatorData = {
       ],
       null,
       [...emptyCells(3), outputCell('7', 'the input value offset by x, -y')],
+    ],
+  },
+  Y: {
+    length: 3,
+    rows: [
+      null,
+      [
+        argumentCell('3', 'the input: some value'),
+        tooltipCell('Y', 'the operator'),
+        outputCell('3', 'the output: the input value'),
+      ],
+      null,
     ],
   },
   ':': {
@@ -273,13 +301,14 @@ function addTilt() {
   vt.init(document.querySelectorAll('section > table'));
 }
 
-window.addEventListener('load', () => {
+window.onload = () => {
   // eslint-disable-next-line
   vt = VanillaTilt;
+  generatedExamples = window.examples;
 
   patchOrcaToEnfer();
   addOrcaSnippetListeners();
   loadExamples();
   addTilt();
   loadOperatorExamples();
-});
+};

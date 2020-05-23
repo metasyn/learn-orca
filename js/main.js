@@ -21,6 +21,13 @@ function patchOrcaToEnfer() {
   const { orcaClient } = document.getElementById('orca-iframe').contentWindow;
   const { enferClient } = document.getElementById('enfer-iframe').contentWindow;
 
+  // better display
+  const mixer = document.getElementById('enfer-iframe')
+    .contentWindow
+    .document
+    .getElementById('mixer');
+  mixer.style.display = 'inline';
+
   const enferBridge = {
     send: (msg) => {
       enferClient.io.onMessage({ data: msg });
@@ -50,9 +57,48 @@ function addOrcaSnippetListeners() {
   }));
 }
 
+
+// ////////
+/* Modes */
+// ////////
+
+const createModes = () => {
+  const create = document.getElementById('create-mode');
+  const learn = document.getElementById('learn-mode');
+  const orca = document.getElementById('orca');
+  const enfer = document.getElementById('enfer');
+  const guide = document.getElementById('guide');
+
+
+  create.addEventListener('click', () => {
+    learn.classList.remove('hidden');
+    guide.classList.add('hidden');
+    create.classList.add('hidden');
+    orca.classList.add('create');
+    enfer.classList.add('create');
+  });
+
+  learn.addEventListener('click', () => {
+    learn.classList.add('hidden');
+    guide.classList.remove('hidden');
+    create.classList.remove('hidden');
+    orca.classList.remove('create');
+    enfer.classList.remove('create');
+  });
+};
+
+
 // ////////////
 /* examples */
 // ////////////
+
+const makeExampleLink = (el, title, item) => {
+  const a = document.createElement('a');
+  const link = document.createTextNode(title);
+  a.appendChild(link);
+  a.href = `javascript:loadExample('${item}')`;
+  el.appendChild(a);
+};
 
 function loadExamples() {
   examples = {
@@ -81,16 +127,17 @@ function loadExamples() {
 
   const sorted = Object.keys(examples).sort();
 
-  const dropDown = document.getElementById('examples-content');
   sorted.forEach((item) => {
     // Create anchor
-    const a = document.createElement('a');
-    const link = document.createTextNode(item);
-    a.appendChild(link);
-    a.href = `javascript:loadExample('${item}')`;
+    let [category, title] = item.split('/');
+    if (!title) {
+      title = category;
+      category = 'misc';
+    }
+    console.log(category);
 
-    // Append
-    dropDown.appendChild(a);
+    const dropDown = document.getElementById(`${category}-content`);
+    makeExampleLink(dropDown, title, item);
   });
 }
 
@@ -351,4 +398,5 @@ window.onload = () => {
   loadExamples();
   addTilt();
   loadOperatorExamples();
+  createModes();
 };

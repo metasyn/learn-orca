@@ -280,7 +280,7 @@ After that, we have the B operator, which takes the difference of two operands:
 
 <div class='operator' data-operator='B'></div>
 
-One other simple operator that is really useful for adding some nuance is the F operator. The F operator checks for quality, and bangs if its true.
+One other simple operator that is really useful for adding some nuance is the F operator. The F operator checks for equality, and bangs if its true.
 
 <div class='operator' data-operator='F'></div>
 

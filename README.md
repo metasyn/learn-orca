@@ -6,8 +6,13 @@ learn-orca is a site for learning how to use [Orca](https://github.com/hundredra
 
 Requires [pandoc](https://pandoc.org)
 
+This repo also has submodules. You can either:
 ```
-git submodule update
+# clone with reference
+git clone --recursive [URL to Git repo]
+
+# or run this after cloning
+git submodule update --init
 ```
 
 This site uses pandoc to convert markdown to html. The html is then loaded via an iframe.

@@ -185,10 +185,10 @@ Go ahead and try checking out some of the instruments that are already wired up 
 An easy one to start with is the D (delay) operator.
 
 Try adding the following:
-```orca
+<pre class="orca">
 .D......
 ..:03cf5
-```
+</pre>
 and making sure the clock is on my pressing space. Boom! We've made our first notes.
 Quickly, I'm sure you'll find a single repeating note annoying.
 
@@ -203,10 +203,10 @@ We can add a random note value by using the R (random) operator.
 
 So, lets try putting it above our note argument:
 
-```orca
+<pre class='orca'>
 .D..aRf.
 ..:03cf5
-```
+</pre>
 
 ## regularization
 
@@ -216,11 +216,11 @@ We can also create something interesting by varying regularly. One useful operat
 
 Try running the following:
 
-```orca
+<pre class='orca'>
 ..C.....
 .D..aRf.
 ..:03cf5
-```
+</pre>
 
 Now lets make two of them! Remember you can drag with the mouse or just use the arrow keys and shift to select a section.
 After that, simply copy and paste to a new section. Let's also make some changes:
@@ -228,7 +228,7 @@ After that, simply copy and paste to a new section. Let's also make some changes
 - remove the clock from one of the items and replace it with a constant value (2).
 - move the octave down one
 
-```orca
+<pre class='orca'>
 ..C.....
 .D..aRf.
 ..:03cf5
@@ -236,7 +236,7 @@ After that, simply copy and paste to a new section. Let's also make some changes
 ........
 .D2.aRf.
 ..:02cf5
-```
+</pre>
 
 Now we have a somewhat interesting mixture of regularization, and randomization.
 
@@ -259,13 +259,13 @@ operator, then moving the operand it produces down into the note selection area 
 - remove the R operator and replace it with a J, which will insert the note into our midi operator.
 
 
-```orca
+<pre class='orca'>
 ...C...........
 ...68TCFGACFE..
 ..C..E.........
 .D6..J.........
 ..:32Ef5.......
-```
+</pre>
 
 Wait! It sounds different. Note that we also changed the midi operator's channel and octave. We're now sending a much lower note to a different instrument. Try changing it yourself.
 
@@ -288,7 +288,7 @@ One other simple operator that is really useful for adding some nuance is the F 
 
 [Devine](devine) has conveniently added drum samples to the first octaves of the voices in [Enfer](enfer) which is where our synthesizers and sounds are actually coming from. Let's add a kick, snare, hi-hat and lead to our previous bass line.
 
-```orca
+<pre class='orca'>
 ..........................
 .#.sequence.#..#..kick..#.
 ..........................
@@ -315,7 +315,7 @@ One other simple operator that is really useful for adding some nuance is the F 
 ..........................
 .....2....................
 ..........................
-```
+</pre>
 
 With that, we've made our first little tune!
 

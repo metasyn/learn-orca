@@ -3,7 +3,7 @@
 import json
 import glob
 
-EXAMPLES_FOLDER = "Orca/examples/"
+EXAMPLES_FOLDER = "orca-examples/"
 
 if __name__ == '__main__':
     ret = {}

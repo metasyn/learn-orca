@@ -359,7 +359,7 @@ If you find [Orca][orca] or [Enfer][enfer] useful; please support [hundred rabbi
 [support]: https://100r.co/site/support.html
 [devine]: https://wiki.xxiivv.com/site/home.html
 [orca]: https://github.com/hundredrabbits/Orca
-[metasyn]: https://metasyn.github.io
+[metasyn]: https://metasyn.pw
 [midi]: https://en.wikipedia.org/wiki/MIDI
 [osc]: https://en.wikipedia.org/wiki/Open_Sound_Control
 [udp]: https://en.wikipedia.org/wiki/User_Datagram_Protocol

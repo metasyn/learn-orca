@@ -186,6 +186,7 @@ An easy one to start with is the D (delay) operator.
 
 Try adding the following:
 ```orca
+........
 .D......
 ..:03cf5
 ```
@@ -204,6 +205,7 @@ We can add a random note value by using the R (random) operator.
 So, lets try putting it above our note argument:
 
 ```orca
+........
 .D..aRf.
 ..:03cf5
 ```
@@ -217,6 +219,7 @@ We can also create something interesting by varying regularly. One useful operat
 Try running the following:
 
 ```orca
+........
 ..C.....
 .D..aRf.
 ..:03cf5
@@ -229,6 +232,7 @@ After that, simply copy and paste to a new section. Let's also make some changes
 - move the octave down one
 
 ```orca
+........
 ..C.....
 .D..aRf.
 ..:03cf5
@@ -260,6 +264,7 @@ operator, then moving the operand it produces down into the note selection area 
 
 
 ```orca
+...............
 ...C...........
 ...68TCFGACFE..
 ..C..E.........

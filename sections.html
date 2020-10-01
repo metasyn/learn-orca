@@ -2,26 +2,32 @@
   <section class="level2">
   <h2>table of contents</h2>
     <ul>
-    <li><a href="#basics">basics</a><ul>
+    <li><a href="#basics">basics</a>
+    <ul>
     <li><a href="#about">about</a></li>
-    <li><a href="#navigation">navigation</a><ul>
+    <li><a href="#navigation">navigation</a>
+    <ul>
     <li><a href="#movement">movement</a></li>
     <li><a href="#selection">selection</a></li>
     <li><a href="#cursor">cursor</a></li>
     </ul></li>
-    <li><a href="#concepts">concepts</a><ul>
+    <li><a href="#concepts">concepts</a>
+    <ul>
     <li><a href="#base36-numbers">base36 numbers</a></li>
     <li><a href="#operators">operators</a></li>
     <li><a href="#bangs">bangs</a></li>
     </ul></li>
-    <li><a href="#timing">timing</a><ul>
+    <li><a href="#timing">timing</a>
+    <ul>
     <li><a href="#clock">clock</a></li>
     <li><a href="#frames">frames</a></li>
     <li><a href="#tempo">tempo</a></li>
     </ul></li>
     </ul></li>
-    <li><a href="#first-notes">first notes</a><ul>
-    <li><a href="#the-midi-operator">the midi operator</a><ul>
+    <li><a href="#first-notes">first notes</a>
+    <ul>
+    <li><a href="#the-midi-operator">the midi operator</a>
+    <ul>
     <li><a href="#transpose-table">transpose table</a></li>
     <li><a href="#banging-away">banging away</a></li>
     </ul></li>
@@ -31,25 +37,26 @@
     <li><a href="#simple-math">simple math</a></li>
     <li><a href="#percussion">percussion</a></li>
     </ul></li>
-    <li><a href="#organization">organization</a><ul>
+    <li><a href="#organization">organization</a>
+    <ul>
     <li><a href="#jumping-around">jumping around</a></li>
     <li><a href="#writing-querying">writing &amp; querying</a></li>
     </ul></li>
     <li><a href="#contributing">contributing</a></li>
     </ul>
   </section>
-  <div id="basics" class="section level1">
+  <section id="basics" class="level1">
   <h1>basics</h1>
-  <div id="about" class="section level2">
+  <section id="about" class="level2">
   <h2>about</h2>
   <p><a href="https://github.com/hundredrabbits/Orca">Orca</a> is an esoteric programming language, designed to create procedural sequencers in which each letter of the alphabet is an <a href="#operators">operation</a>, where lowercase letters operate on <a href="#bangs">bang</a>, uppercase letters operate each <a href="#frames">frame</a>. It was created by <a href="https://100r.co/site/home.html">hundred rabbits</a>, a research studio on a sailboat.</p>
   <p>Orca is not a synthesizer, but a flexible livecoding environment capable of sending <a href="https://en.wikipedia.org/wiki/MIDI">MIDI</a>, <a href="https://en.wikipedia.org/wiki/Open_Sound_Control">OSC</a> &amp; <a href="https://en.wikipedia.org/wiki/User_Datagram_Protocol">UDP</a> to your audio/visual interfaces, like Ableton, Renoise, VCV Rack or SuperCollider.</p>
-  <p>For the purposes of this site, we've connected some drum racks and synthesizers from <a href="https://github.com/neauoire/Enfer">Enfer</a> in the bottom right and are patching them in as virtualized midi instruments. Normally, Orca will not make sound on its own, and rather just sends messages or data to external devices or programs. Orca and Enfer are both creations of <a href="https://wiki.xxiivv.com/site/home.html">Devine Lu Linvega</a>.</p>
-  </div>
-  <div id="navigation" class="section level2">
+  <p>For the purposes of this site, we’ve connected some drum racks and synthesizers from <a href="https://github.com/neauoire/Enfer">Enfer</a> in the bottom right and are patching them in as virtualized midi instruments. Normally, Orca will not make sound on its own, and rather just sends messages or data to external devices or programs. Orca and Enfer are both creations of <a href="https://wiki.xxiivv.com/site/home.html">Devine Lu Linvega</a>.</p>
+  </section>
+  <section id="navigation" class="level2">
   <h2>navigation</h2>
   <p>Orca can be navigated a number of ways. You can try clicking a particular coordinate on the grid, or use the arrow keys to move the cursor around. Conveniently, you can also see a lot of navigational commands by opening the javascript console. When Orca starts, it prints out a number of commands:</p>
-  <div id="movement" class="section level3">
+  <section id="movement" class="level3">
   <h3>movement</h3>
   <pre><code>Move North............... ArrowUp
   Move East................ ArrowRight
@@ -59,8 +66,8 @@
   Move East(Leap).......... CmdOrCtrl+ArrowRight
   Move South(Leap)......... CmdOrCtrl+ArrowDown
   Move West(Leap).......... CmdOrCtrl+ArrowLeft</code></pre>
-  </div>
-  <div id="selection" class="section level3">
+  </section>
+  <section id="selection" class="level3">
   <h3>selection</h3>
   <p>Orca also has the concept of a selection. You can hold down shift to make it larger.</p>
   <pre><code>Scale North.............. Shift+ArrowUp
@@ -71,19 +78,19 @@
   Scale East(Leap)......... CmdOrCtrl+Shift+ArrowRight
   Scale South(Leap)........ CmdOrCtrl+Shift+ArrowDown
   Scale West(Leap)......... CmdOrCtrl+Shift+ArrowLeftl</code></pre>
-  </div>
-  <div id="cursor" class="section level3">
+  </section>
+  <section id="cursor" class="level3">
   <h3>cursor</h3>
   <p>Lastly, there is a concept of a cursor mode, kind of like VIM. Normally, typing will only edit values under the head of the cursor (the @ sign). If you switch to insert mode, you can type and the cursor head will auto advance.</p>
   <pre><code>Toggle Insert Mode....... CmdOrCtrl+I
   Toggle Block Comment..... CmdOrCtrl+/
   Trigger Operator......... CmdOrCtrl+P
   Reset.................... Escape</code></pre>
-  </div>
-  </div>
-  <div id="concepts" class="section level2">
+  </section>
+  </section>
+  <section id="concepts" class="level2">
   <h2>concepts</h2>
-  <div id="base36-numbers" class="section level3">
+  <section id="base36-numbers" class="level3">
   <h3>base36 numbers</h3>
   <p>Orca utilizes a unique base-36 number system:</p>
   <ul>
@@ -94,115 +101,115 @@
   <table>
   <thead>
   <tr class="header">
-  <th align="center"><strong>0</strong></th>
-  <th align="center"><strong>1</strong></th>
-  <th align="center"><strong>2</strong></th>
-  <th align="center"><strong>3</strong></th>
-  <th align="center"><strong>4</strong></th>
-  <th align="center"><strong>5</strong></th>
-  <th align="center"><strong>6</strong></th>
-  <th align="center"><strong>7</strong></th>
-  <th align="center"><strong>8</strong></th>
-  <th align="center"><strong>9</strong></th>
-  <th align="center"><strong>A</strong></th>
-  <th align="center"><strong>B</strong></th>
+  <th style="text-align: center;"><strong>0</strong></th>
+  <th style="text-align: center;"><strong>1</strong></th>
+  <th style="text-align: center;"><strong>2</strong></th>
+  <th style="text-align: center;"><strong>3</strong></th>
+  <th style="text-align: center;"><strong>4</strong></th>
+  <th style="text-align: center;"><strong>5</strong></th>
+  <th style="text-align: center;"><strong>6</strong></th>
+  <th style="text-align: center;"><strong>7</strong></th>
+  <th style="text-align: center;"><strong>8</strong></th>
+  <th style="text-align: center;"><strong>9</strong></th>
+  <th style="text-align: center;"><strong>A</strong></th>
+  <th style="text-align: center;"><strong>B</strong></th>
   </tr>
   </thead>
   <tbody>
   <tr class="odd">
-  <td align="center">0</td>
-  <td align="center">1</td>
-  <td align="center">2</td>
-  <td align="center">3</td>
-  <td align="center">4</td>
-  <td align="center">5</td>
-  <td align="center">6</td>
-  <td align="center">7</td>
-  <td align="center">8</td>
-  <td align="center">9</td>
-  <td align="center">10</td>
-  <td align="center">11</td>
+  <td style="text-align: center;">0</td>
+  <td style="text-align: center;">1</td>
+  <td style="text-align: center;">2</td>
+  <td style="text-align: center;">3</td>
+  <td style="text-align: center;">4</td>
+  <td style="text-align: center;">5</td>
+  <td style="text-align: center;">6</td>
+  <td style="text-align: center;">7</td>
+  <td style="text-align: center;">8</td>
+  <td style="text-align: center;">9</td>
+  <td style="text-align: center;">10</td>
+  <td style="text-align: center;">11</td>
   </tr>
   <tr class="even">
-  <td align="center"><strong>C</strong></td>
-  <td align="center"><strong>D</strong></td>
-  <td align="center"><strong>E</strong></td>
-  <td align="center"><strong>F</strong></td>
-  <td align="center"><strong>G</strong></td>
-  <td align="center"><strong>H</strong></td>
-  <td align="center"><strong>I</strong></td>
-  <td align="center"><strong>J</strong></td>
-  <td align="center"><strong>K</strong></td>
-  <td align="center"><strong>L</strong></td>
-  <td align="center"><strong>M</strong></td>
-  <td align="center"><strong>N</strong></td>
+  <td style="text-align: center;"><strong>C</strong></td>
+  <td style="text-align: center;"><strong>D</strong></td>
+  <td style="text-align: center;"><strong>E</strong></td>
+  <td style="text-align: center;"><strong>F</strong></td>
+  <td style="text-align: center;"><strong>G</strong></td>
+  <td style="text-align: center;"><strong>H</strong></td>
+  <td style="text-align: center;"><strong>I</strong></td>
+  <td style="text-align: center;"><strong>J</strong></td>
+  <td style="text-align: center;"><strong>K</strong></td>
+  <td style="text-align: center;"><strong>L</strong></td>
+  <td style="text-align: center;"><strong>M</strong></td>
+  <td style="text-align: center;"><strong>N</strong></td>
   </tr>
   <tr class="odd">
-  <td align="center">12</td>
-  <td align="center">13</td>
-  <td align="center">14</td>
-  <td align="center">15</td>
-  <td align="center">16</td>
-  <td align="center">17</td>
-  <td align="center">18</td>
-  <td align="center">19</td>
-  <td align="center">20</td>
-  <td align="center">21</td>
-  <td align="center">22</td>
-  <td align="center">23</td>
+  <td style="text-align: center;">12</td>
+  <td style="text-align: center;">13</td>
+  <td style="text-align: center;">14</td>
+  <td style="text-align: center;">15</td>
+  <td style="text-align: center;">16</td>
+  <td style="text-align: center;">17</td>
+  <td style="text-align: center;">18</td>
+  <td style="text-align: center;">19</td>
+  <td style="text-align: center;">20</td>
+  <td style="text-align: center;">21</td>
+  <td style="text-align: center;">22</td>
+  <td style="text-align: center;">23</td>
   </tr>
   <tr class="even">
-  <td align="center"><strong>O</strong></td>
-  <td align="center"><strong>P</strong></td>
-  <td align="center"><strong>Q</strong></td>
-  <td align="center"><strong>R</strong></td>
-  <td align="center"><strong>S</strong></td>
-  <td align="center"><strong>T</strong></td>
-  <td align="center"><strong>U</strong></td>
-  <td align="center"><strong>V</strong></td>
-  <td align="center"><strong>W</strong></td>
-  <td align="center"><strong>X</strong></td>
-  <td align="center"><strong>Y</strong></td>
-  <td align="center"><strong>Z</strong></td>
+  <td style="text-align: center;"><strong>O</strong></td>
+  <td style="text-align: center;"><strong>P</strong></td>
+  <td style="text-align: center;"><strong>Q</strong></td>
+  <td style="text-align: center;"><strong>R</strong></td>
+  <td style="text-align: center;"><strong>S</strong></td>
+  <td style="text-align: center;"><strong>T</strong></td>
+  <td style="text-align: center;"><strong>U</strong></td>
+  <td style="text-align: center;"><strong>V</strong></td>
+  <td style="text-align: center;"><strong>W</strong></td>
+  <td style="text-align: center;"><strong>X</strong></td>
+  <td style="text-align: center;"><strong>Y</strong></td>
+  <td style="text-align: center;"><strong>Z</strong></td>
   </tr>
   <tr class="odd">
-  <td align="center">24</td>
-  <td align="center">25</td>
-  <td align="center">26</td>
-  <td align="center">27</td>
-  <td align="center">28</td>
-  <td align="center">29</td>
-  <td align="center">30</td>
-  <td align="center">31</td>
-  <td align="center">32</td>
-  <td align="center">33</td>
-  <td align="center">34</td>
-  <td align="center">35</td>
+  <td style="text-align: center;">24</td>
+  <td style="text-align: center;">25</td>
+  <td style="text-align: center;">26</td>
+  <td style="text-align: center;">27</td>
+  <td style="text-align: center;">28</td>
+  <td style="text-align: center;">29</td>
+  <td style="text-align: center;">30</td>
+  <td style="text-align: center;">31</td>
+  <td style="text-align: center;">32</td>
+  <td style="text-align: center;">33</td>
+  <td style="text-align: center;">34</td>
+  <td style="text-align: center;">35</td>
   </tr>
   </tbody>
   </table>
   <p>Anytime you want to give a numeric value, you can give a letter as well.</p>
-  </div>
-  <div id="operators" class="section level3">
+  </section>
+  <section id="operators" class="level3">
   <h3>operators</h3>
   <p>Operators are mostly letters, and a few symbols. An operator takes up one cell in the grid. Most operators have some type of input or output on one of their adjacent tiles. Some operators are capable of moving; others stay put. You can see a guide referencing the operators by pressing <code>CmdOrCtrl+G</code></p>
   <p>Operators come in two main flavors: lower-case and upper-case. Lower-case letters will operate on every <a href="#bang">bang</a>, and upper-case letters will operate on every <a href="#frames">frame</a>.</p>
   <p>Most operators take some number of inputs and produce some number of inputs. The inputs and outputs are generally going to be on the top, bottom, or sides of the operator.</p>
   <p>For example, take the D operator. It has two <span class="argument">inputs</span> and one <span class="output">output</span>.</p>
   <div class="operator" data-operator="D">
-  
+
   </div>
   <p>Other operators have a larger number of inputs an outputs. For example, take X - it has three <span class="argument">inputs</span> and one <span class="output">output</span>:</p>
   <div class="operator" data-operator="X">
-  
+
   </div>
-  </div>
-  <div id="bangs" class="section level3">
+  </section>
+  <section id="bangs" class="level3">
   <h3>bangs</h3>
   <p>Bangs are what makes thing happen. Many operators only get triggered when they there is a bang operator adjacent to them. The bang operator itself is a * character. For example, the D operator causes a bang on an interval at its bottom location. Any adjacent operator will be triggered if it is next to that particular cell.</p>
-  </div>
-  </div>
-  <div id="timing" class="section level2">
+  </section>
+  </section>
+  <section id="timing" class="level2">
   <h2>timing</h2>
   <p>Orca has a few relevant components related to timing:</p>
   <ul>
@@ -210,15 +217,15 @@
   <li>frames</li>
   <li>tempo</li>
   </ul>
-  <div id="clock" class="section level3">
+  <section id="clock" class="level3">
   <h3>clock</h3>
   <p>The clock can be started and stop with the spacebar. If a midi device is connected as an input, the clock will be set from the midi device, and Orca will respond to midi start and stop messages.</p>
-  </div>
-  <div id="frames" class="section level3">
+  </section>
+  <section id="frames" class="level3">
   <h3>frames</h3>
   <p>For each tick of the clock, we move forward a frame. Frames can be skipped or rewound with an Orca command if needed, too. The current frame number can be seen in the bottom right of the window.</p>
-  </div>
-  <div id="tempo" class="section level3">
+  </section>
+  <section id="tempo" class="level3">
   <h3>tempo</h3>
   <p>The tempo, as expected, determines the BPM and rate that the clock will tick. There are some relevant shortcuts as well:</p>
   <pre><code>Frame By Frame........... CmdOrCtrl+F
@@ -227,147 +234,151 @@
   Decr. Speed.............. &lt;
   Incr. Speed(10x)......... CmdOrCtrl+&gt;
   Decr. Speed(10x)......... CmdOrCtrl+&lt;</code></pre>
-  </div>
-  </div>
-  </div>
-  <div id="first-notes" class="section level1">
+  </section>
+  </section>
+  </section>
+  <section id="first-notes" class="level1">
   <h1>first notes</h1>
-  <div id="the-midi-operator" class="section level2">
+  <section id="the-midi-operator" class="level2">
   <h2>the midi operator</h2>
   <p>For the purposes of learning, the easiest way to start making some sound is by using the midi operator. The midi operator takes five <span class="argument">inputs</span>. It has zero Orca <span class="output">outputs</span> but as you might expect, sends a midi message to a midi device.</p>
   <div class="operator" data-operator=":">
-  
+
   </div>
-  <div id="transpose-table" class="section level3">
+  <section id="transpose-table" class="level3">
   <h3>transpose table</h3>
   <p>The midi operator interprets any letter above the chromatic scale as a transpose value, for instance 3H, is equivalent to 4A.</p>
   <table>
   <thead>
   <tr class="header">
-  <th align="center"><strong>0</strong></th>
-  <th align="center"><strong>1</strong></th>
-  <th align="center"><strong>2</strong></th>
-  <th align="center"><strong>3</strong></th>
-  <th align="center"><strong>4</strong></th>
-  <th align="center"><strong>5</strong></th>
-  <th align="center"><strong>6</strong></th>
-  <th align="center"><strong>7</strong></th>
-  <th align="center"><strong>8</strong></th>
-  <th align="center"><strong>9</strong></th>
-  <th align="center"><strong>A</strong></th>
-  <th align="center"><strong>B</strong></th>
+  <th style="text-align: center;"><strong>0</strong></th>
+  <th style="text-align: center;"><strong>1</strong></th>
+  <th style="text-align: center;"><strong>2</strong></th>
+  <th style="text-align: center;"><strong>3</strong></th>
+  <th style="text-align: center;"><strong>4</strong></th>
+  <th style="text-align: center;"><strong>5</strong></th>
+  <th style="text-align: center;"><strong>6</strong></th>
+  <th style="text-align: center;"><strong>7</strong></th>
+  <th style="text-align: center;"><strong>8</strong></th>
+  <th style="text-align: center;"><strong>9</strong></th>
+  <th style="text-align: center;"><strong>A</strong></th>
+  <th style="text-align: center;"><strong>B</strong></th>
   </tr>
   </thead>
   <tbody>
   <tr class="odd">
-  <td align="center">_</td>
-  <td align="center">_</td>
-  <td align="center">_</td>
-  <td align="center">_</td>
-  <td align="center">_</td>
-  <td align="center">_</td>
-  <td align="center">_</td>
-  <td align="center">_</td>
-  <td align="center">_</td>
-  <td align="center">_</td>
-  <td align="center">A0</td>
-  <td align="center">B0</td>
+  <td style="text-align: center;">_</td>
+  <td style="text-align: center;">_</td>
+  <td style="text-align: center;">_</td>
+  <td style="text-align: center;">_</td>
+  <td style="text-align: center;">_</td>
+  <td style="text-align: center;">_</td>
+  <td style="text-align: center;">_</td>
+  <td style="text-align: center;">_</td>
+  <td style="text-align: center;">_</td>
+  <td style="text-align: center;">_</td>
+  <td style="text-align: center;">A0</td>
+  <td style="text-align: center;">B0</td>
   </tr>
   <tr class="even">
-  <td align="center"><strong>C</strong></td>
-  <td align="center"><strong>D</strong></td>
-  <td align="center"><strong>E</strong></td>
-  <td align="center"><strong>F</strong></td>
-  <td align="center"><strong>G</strong></td>
-  <td align="center"><strong>H</strong></td>
-  <td align="center"><strong>I</strong></td>
-  <td align="center"><strong>J</strong></td>
-  <td align="center"><strong>K</strong></td>
-  <td align="center"><strong>L</strong></td>
-  <td align="center"><strong>M</strong></td>
-  <td align="center"><strong>N</strong></td>
+  <td style="text-align: center;"><strong>C</strong></td>
+  <td style="text-align: center;"><strong>D</strong></td>
+  <td style="text-align: center;"><strong>E</strong></td>
+  <td style="text-align: center;"><strong>F</strong></td>
+  <td style="text-align: center;"><strong>G</strong></td>
+  <td style="text-align: center;"><strong>H</strong></td>
+  <td style="text-align: center;"><strong>I</strong></td>
+  <td style="text-align: center;"><strong>J</strong></td>
+  <td style="text-align: center;"><strong>K</strong></td>
+  <td style="text-align: center;"><strong>L</strong></td>
+  <td style="text-align: center;"><strong>M</strong></td>
+  <td style="text-align: center;"><strong>N</strong></td>
   </tr>
   <tr class="odd">
-  <td align="center">C0</td>
-  <td align="center">D0</td>
-  <td align="center">E0</td>
-  <td align="center">F0</td>
-  <td align="center">G0</td>
-  <td align="center">A0</td>
-  <td align="center">B0</td>
-  <td align="center">C1</td>
-  <td align="center">D1</td>
-  <td align="center">E1</td>
-  <td align="center">F1</td>
-  <td align="center">G1</td>
+  <td style="text-align: center;">C0</td>
+  <td style="text-align: center;">D0</td>
+  <td style="text-align: center;">E0</td>
+  <td style="text-align: center;">F0</td>
+  <td style="text-align: center;">G0</td>
+  <td style="text-align: center;">A0</td>
+  <td style="text-align: center;">B0</td>
+  <td style="text-align: center;">C1</td>
+  <td style="text-align: center;">D1</td>
+  <td style="text-align: center;">E1</td>
+  <td style="text-align: center;">F1</td>
+  <td style="text-align: center;">G1</td>
   </tr>
   <tr class="even">
-  <td align="center"><strong>O</strong></td>
-  <td align="center"><strong>P</strong></td>
-  <td align="center"><strong>Q</strong></td>
-  <td align="center"><strong>R</strong></td>
-  <td align="center"><strong>S</strong></td>
-  <td align="center"><strong>T</strong></td>
-  <td align="center"><strong>U</strong></td>
-  <td align="center"><strong>V</strong></td>
-  <td align="center"><strong>W</strong></td>
-  <td align="center"><strong>X</strong></td>
-  <td align="center"><strong>Y</strong></td>
-  <td align="center"><strong>Z</strong></td>
+  <td style="text-align: center;"><strong>O</strong></td>
+  <td style="text-align: center;"><strong>P</strong></td>
+  <td style="text-align: center;"><strong>Q</strong></td>
+  <td style="text-align: center;"><strong>R</strong></td>
+  <td style="text-align: center;"><strong>S</strong></td>
+  <td style="text-align: center;"><strong>T</strong></td>
+  <td style="text-align: center;"><strong>U</strong></td>
+  <td style="text-align: center;"><strong>V</strong></td>
+  <td style="text-align: center;"><strong>W</strong></td>
+  <td style="text-align: center;"><strong>X</strong></td>
+  <td style="text-align: center;"><strong>Y</strong></td>
+  <td style="text-align: center;"><strong>Z</strong></td>
   </tr>
   <tr class="odd">
-  <td align="center">A1</td>
-  <td align="center">B1</td>
-  <td align="center">C2</td>
-  <td align="center">D2</td>
-  <td align="center">E2</td>
-  <td align="center">F2</td>
-  <td align="center">G2</td>
-  <td align="center">A2</td>
-  <td align="center">B2</td>
-  <td align="center">C3</td>
-  <td align="center">D3</td>
-  <td align="center">E3</td>
+  <td style="text-align: center;">A1</td>
+  <td style="text-align: center;">B1</td>
+  <td style="text-align: center;">C2</td>
+  <td style="text-align: center;">D2</td>
+  <td style="text-align: center;">E2</td>
+  <td style="text-align: center;">F2</td>
+  <td style="text-align: center;">G2</td>
+  <td style="text-align: center;">A2</td>
+  <td style="text-align: center;">B2</td>
+  <td style="text-align: center;">C3</td>
+  <td style="text-align: center;">D3</td>
+  <td style="text-align: center;">E3</td>
   </tr>
   </tbody>
   </table>
-  </div>
-  <div id="banging-away" class="section level3">
+  </section>
+  <section id="banging-away" class="level3">
   <h3>banging away</h3>
-  <p>However, you'll need to somehow send a bang to the operator. Go ahead and try checking out some of the instruments that are already wired up via <a href="https://github.com/neauoire/Enfer">Enfer</a>. An easy one to start with is the D (delay) operator.</p>
+  <p>However, you’ll need to somehow send a bang to the operator. Go ahead and try checking out some of the instruments that are already wired up via <a href="https://github.com/neauoire/Enfer">Enfer</a>. An easy one to start with is the D (delay) operator.</p>
   <p>Try adding the following:</p>
-  <pre class="orca"><code>.D......
+  <pre class="orca"><code>........
+  .D......
   ..:03cf5</code></pre>
-  <p>and making sure the clock is on my pressing space. Boom! We've made our first notes. Quickly, I'm sure you'll find a single repeating note annoying.</p>
-  <p>Don't forget you can press <em>space</em> to turn on or off the <a href="#clock">clock</a>. Why don't we add some chaos?</p>
-  </div>
-  </div>
-  <div id="randomization" class="section level2">
+  <p>and making sure the clock is on my pressing space. Boom! We’ve made our first notes. Quickly, I’m sure you’ll find a single repeating note annoying.</p>
+  <p>Don’t forget you can press <em>space</em> to turn on or off the <a href="#clock">clock</a>. Why don’t we add some chaos?</p>
+  </section>
+  </section>
+  <section id="randomization" class="level2">
   <h2>randomization</h2>
   <p>We can add a random note value by using the R (random) operator.</p>
   <div class="operator" data-operator="R">
-  
+
   </div>
   <p>So, lets try putting it above our note argument:</p>
-  <pre class="orca"><code>.D..aRf.
+  <pre class="orca"><code>........
+  .D..aRf.
   ..:03cf5</code></pre>
-  </div>
-  <div id="regularization" class="section level2">
+  </section>
+  <section id="regularization" class="level2">
   <h2>regularization</h2>
   <p>We can also create something interesting by varying regularly. One useful operator for this is the C (clock) operator.</p>
   <div class="operator" data-operator="C">
-  
+
   </div>
   <p>Try running the following:</p>
-  <pre class="orca"><code>..C.....
+  <pre class="orca"><code>........
+  ..C.....
   .D..aRf.
   ..:03cf5</code></pre>
-  <p>Now lets make two of them! Remember you can drag with the mouse or just use the arrow keys and shift to select a section. After that, simply copy and paste to a new section. Let's also make some changes:</p>
+  <p>Now lets make two of them! Remember you can drag with the mouse or just use the arrow keys and shift to select a section. After that, simply copy and paste to a new section. Let’s also make some changes:</p>
   <ul>
   <li>remove the clock from one of the items and replace it with a constant value (2).</li>
   <li>move the octave down one</li>
   </ul>
-  <pre class="orca"><code>..C.....
+  <pre class="orca"><code>........
+  ..C.....
   .D..aRf.
   ..:03cf5
   ........
@@ -375,45 +386,46 @@
   .D2.aRf.
   ..:02cf5</code></pre>
   <p>Now we have a somewhat interesting mixture of regularization, and randomization.</p>
-  </div>
-  <div id="sequencing" class="section level2">
+  </section>
+  <section id="sequencing" class="level2">
   <h2>sequencing</h2>
   <p>What if we wanted to specify a particular sequence of notes, rather than choosing them randomly?</p>
   <p>One of the most essential operators for sequencing is the T (tracker) operator. The T operator takes at minimum 3 <span class="argument">inputs</span>. We say at minimum because one of the arguments <em>determines</em> how many arguments there are on the right side.</p>
   <div class="operator" data-operator="T">
-  
+
   </div>
-  <p>T operators are nice because we can specify a sequence of notes that we are interested in and we can also control how often we change between them, as well as which ones we want to change to. Let's start by establishing an interesting or fun sequence with the T operator, then moving the operand it produces down into the note selection area for a midi operator. Here's what we'll do:</p>
+  <p>T operators are nice because we can specify a sequence of notes that we are interested in and we can also control how often we change between them, as well as which ones we want to change to. Let’s start by establishing an interesting or fun sequence with the T operator, then moving the operand it produces down into the note selection area for a midi operator. Here’s what we’ll do:</p>
   <ul>
   <li>add a T operator to establish a sequence</li>
-  <li>use a C operator to add an increasing tick to move the selection we have on T's operands</li>
+  <li>use a C operator to add an increasing tick to move the selection we have on T’s operands</li>
   <li>remove the R operator and replace it with a J, which will insert the note into our midi operator.</li>
   </ul>
-  <pre class="orca"><code>...C...........
+  <pre class="orca"><code>...............
+  ...C...........
   ...68TCFGACFE..
   ..C..E.........
   .D6..J.........
   ..:32Ef5.......</code></pre>
-  <p>Wait! It sounds different. Note that we also changed the midi operator's channel and octave. We're now sending a much lower note to a different instrument. Try changing it yourself.</p>
-  </div>
-  <div id="simple-math" class="section level2">
+  <p>Wait! It sounds different. Note that we also changed the midi operator’s channel and octave. We’re now sending a much lower note to a different instrument. Try changing it yourself.</p>
+  </section>
+  <section id="simple-math" class="level2">
   <h2>simple math</h2>
   <p>There are few operators for give us some basic math skills. These will prove invaluable when adding nuance to your creation. The first is the A operator, which, maybe predictably, is for addition:</p>
   <div class="operator" data-operator="A">
-  
+
   </div>
   <p>After that, we have the B operator, which takes the difference of two operands:</p>
   <div class="operator" data-operator="B">
-  
+
   </div>
   <p>One other simple operator that is really useful for adding some nuance is the F operator. The F operator checks for equality, and bangs if its true.</p>
   <div class="operator" data-operator="F">
-  
+
   </div>
-  </div>
-  <div id="percussion" class="section level2">
+  </section>
+  <section id="percussion" class="level2">
   <h2>percussion</h2>
-  <p><a href="devine">Devine</a> has conveniently added drum samples to the first octaves of the voices in <a href="enfer">Enfer</a> which is where our synthesizers and sounds are actually coming from. Let's add a kick, snare, hi-hat and lead to our previous bass line.</p>
+  <p><a href="devine">Devine</a> has conveniently added drum samples to the first octaves of the voices in <a href="enfer">Enfer</a> which is where our synthesizers and sounds are actually coming from. Let’s add a kick, snare, hi-hat and lead to our previous bass line.</p>
   <pre class="orca"><code>..........................
   .#.sequence.#..#..kick..#.
   ..........................
@@ -440,39 +452,39 @@
   ..........................
   .....2....................
   ..........................</code></pre>
-  <p>With that, we've made our first little tune!</p>
-  </div>
-  </div>
-  <div id="organization" class="section level1">
+  <p>With that, we’ve made our first little tune!</p>
+  </section>
+  </section>
+  <section id="organization" class="level1">
   <h1>organization</h1>
-  <div id="jumping-around" class="section level2">
+  <section id="jumping-around" class="level2">
   <h2>jumping around</h2>
   <p>As you can probably imagine, sometimes things can get a little crowded. Two operators we can use to space things out are the J (jumper) and Y (jymper) operators.</p>
   <p>The Y operator moves an operand from the <span class="argument">left</span> to the <span class="output">right</span>:</p>
   <div class="operator" data-operator="Y">
-  
+
   </div>
   <p>The J operator moves an operand from the <span class="argument">top</span> to the <span class="output">bottom</span>:</p>
   <div class="operator" data-operator="J">
-  
+
   </div>
   <p>We can use these when things start to feel too tight - or if you need to move an operator around a bit.</p>
-  </div>
-  <div id="writing-querying" class="section level2">
+  </section>
+  <section id="writing-querying" class="level2">
   <h2>writing &amp; querying</h2>
-  <p>When you're trying to read or write further away, there are two operators that are particularly relevant:</p>
+  <p>When you’re trying to read or write further away, there are two operators that are particularly relevant:</p>
   <ul>
   <li>X (write) : write operands at an offset</li>
   <li>Q (query) : reads operands at an offset</li>
   </ul>
   <div class="operator" data-operator="X">
-  
+
   </div>
-  </div>
-  </div>
-  <div id="contributing" class="section level1">
+  </section>
+  </section>
+  <section id="contributing" class="level1">
   <h1>contributing</h1>
   <p>If you find this guide useful, and would like to contribute, PRs are welcome <a href="https://github.com/metasyn/learn-orca">here</a>. If you find <a href="https://github.com/hundredrabbits/Orca">Orca</a> or <a href="https://github.com/neauoire/Enfer">Enfer</a> useful; please support <a href="https://100r.co/site/support.html">hundred rabbits</a>.</p>
   <!-- LINKS -->
-  </div>
+  </section>
 <div>

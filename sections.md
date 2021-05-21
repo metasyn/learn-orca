@@ -100,7 +100,7 @@ Operators come in two main flavors: lower-case and upper-case. Lower-case
 letters will operate on every [bang](#bang), and upper-case letters
 will operate on every [frame](#frames).
 
-Most operators take some number of inputs and produce some number of inputs.
+Most operators take some number of inputs and produce some number of outputs.
 The inputs and outputs are generally going to be on the top, bottom, or sides of the operator.
 
 For example, take the D operator. It has two <span class='argument'>inputs</span> and one <span class='output'>output</span>.
@@ -189,7 +189,7 @@ Try adding the following:
 .D......
 ..:03cf5
 ```
-and making sure the clock is on my pressing space. Boom! We've made our first notes.
+and making sure the clock is on by pressing space. Boom! We've made our first notes.
 Quickly, I'm sure you'll find a single repeating note annoying.
 
 Don't forget you can press *space* to turn on or off the [clock](#clock).

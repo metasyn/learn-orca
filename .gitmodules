@@ -4,6 +4,3 @@
 [submodule "Enfer"]
 	path = Enfer
 	url = https://github.com/metasyn/Enfer
-[submodule "orca-examples"]
-	path = orca-examples
-	url = https://git.sr.ht/~rabbits/orca-examples

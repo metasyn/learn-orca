@@ -4,37 +4,35 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self' 'unsafe-eval' 'unsafe-inline' data:; worker-src 'self' 'unsafe-eval' 'unsafe-inline' blob: data:;"
+    />
 
     <title>LEARN ORCΛ~</title>
 
     <!-- css -->
     <link rel="stylesheet" href="styles/shared.css" />
-
   </head>
   <body>
     <div id="navbar" class="navbar">
-      <a href="https://github.com/hundredrabbits/orca">ORCΛ</a>
+      <a href="https://100r.co/site/orca.html">ORCΛ</a>
       <div class="dropdown">
         <button class="dropbtn">tutorial</button>
-        <div id="tutorial-content" class="dropdown-content">
-        </div>
+        <div id="tutorial-content" class="dropdown-content"></div>
       </div>
       <div class="dropdown">
         <button class="dropbtn">basics</button>
-        <div id="basics-content" class="dropdown-content">
-        </div>
+        <div id="basics-content" class="dropdown-content"></div>
       </div>
       <div class="dropdown">
         <button class="dropbtn">setups</button>
-        <div id="setups-content" class="dropdown-content">
-        </div>
+        <div id="setups-content" class="dropdown-content"></div>
       </div>
       <div class="dropdown">
         <button class="dropbtn">misc</button>
-        <div id="misc-content" class="dropdown-content">
-        </div>
+        <div id="misc-content" class="dropdown-content"></div>
       </div>
-      <a class="icon" href="https://github.com/metasyn/learn-orca"><img src="./resources/github.png" alt="github"/></a>
       <a id="create-mode">create</a>
       <a id="learn-mode" class="hidden">learn</a>
     </div>
@@ -43,13 +41,18 @@
       <h1 id="fancyboi">LEARN ORCΛ</h1>
       <noscript>
         <p>
-          It look's like you aren't using javascript. Interactive elements require javascript. However, most of the content can be read in a static version <a href="sections.html">here</a>.
+          It look's like you aren't using javascript. Interactive elements
+          require javascript. However, most of the content can be read in a
+          static version <a href="sections.html">here</a>.
         </p>
       </noscript>
-      <iframe src="sections.html" onload="this.before(this.contentDocument.body.children[0]);this.remove();"></iframe>
+      <iframe
+        src="sections.html"
+        onload="this.before(this.contentDocument.body.children[0]);this.remove();"
+      ></iframe>
       <footer class="text-center">
-        <a href="https://github.com/metasyn/learn-orca.git">page source</a>
-        <br>
+        <a href="https://git.sr.ht/~metasyn/learn-orca">page source</a>
+        <br />
         tutorial made by <a href="https://metasyn.pw">metasyn</a>
       </footer>
     </div>

@@ -1,7 +1,0 @@
-<div>
-  <section class="level2">
-  <h2>table of contents</h2>
-    $toc$
-  </section>
-  $body$
-<div>

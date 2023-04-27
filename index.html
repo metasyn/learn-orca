@@ -4,70 +4,41 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self' 'unsafe-eval' 'unsafe-inline' data:; worker-src 'self' 'unsafe-eval' 'unsafe-inline' blob: data:;"
-    />
-
     <title>LEARN ORCΛ~</title>
-
-    <!-- css -->
-    <link rel="stylesheet" href="styles/shared.css" />
   </head>
+
   <body>
-    <div id="navbar" class="navbar">
-      <a href="https://100r.co/site/orca.html">ORCΛ</a>
-      <div class="dropdown">
-        <button class="dropbtn">tutorial</button>
-        <div id="tutorial-content" class="dropdown-content"></div>
-      </div>
-      <div class="dropdown">
-        <button class="dropbtn">basics</button>
-        <div id="basics-content" class="dropdown-content"></div>
-      </div>
-      <div class="dropdown">
-        <button class="dropbtn">setups</button>
-        <div id="setups-content" class="dropdown-content"></div>
-      </div>
-      <div class="dropdown">
-        <button class="dropbtn">misc</button>
-        <div id="misc-content" class="dropdown-content"></div>
-      </div>
-      <a id="create-mode">create</a>
-      <a id="learn-mode" class="hidden">learn</a>
-    </div>
+    <h1>learn-orca has moved to sourcehut</h1>
 
-    <div id="guide">
-      <h1 id="fancyboi">LEARN ORCΛ</h1>
-      <noscript>
-        <p>
-          It look's like you aren't using javascript. Interactive elements
-          require javascript. However, most of the content can be read in a
-          static version <a href="sections.html">here</a>.
-        </p>
-      </noscript>
-      <iframe
-        src="sections.html"
-        onload="this.before(this.contentDocument.body.children[0]);this.remove();"
-      ></iframe>
-      <footer class="text-center">
-        <a href="https://git.sr.ht/~metasyn/learn-orca">page source</a>
-        <br />
-        tutorial made by <a href="https://metasyn.pw">metasyn</a>
-      </footer>
-    </div>
+    <p>
+      you can read about
+      <a href="https://sfconservancy.org/GiveUpGitHub/"
+        >why we're giving up on github here</a
+      >.
+    </p>
 
-    <div id="orca">
-      <iframe id="orca-iframe" src="Orca/index.html"></iframe>
-    </div>
+    <p>
+      the project can now be found at
+      <a href="https://metasyn.srht.site/learn-orca/"
+        >https://metasyn.srht.site/learn-orca/</a
+      >
+    </p>
 
-    <div id="enfer">
-      <iframe id="enfer-iframe" src="Enfer/index.html"></iframe>
-    </div>
-
-    <!-- scripts -->
-    <script type="text/javascript" src="js/vanilla-tilt.min.js"></script>
-    <script type="text/javascript" src="js/examples.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+    <p>
+      if you have javascript enabled, you will be redirected in
+      <span id="countdown">10</span> seconds...
+    </p>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        console.log("countdown...");
+        let span = document.getElementById("countdown");
+        setInterval(() => {
+          span.innerHTML = parseInt(span.innerHTML, 10) - 1;
+          if (span.innerHTML <= 0) {
+            window.location = "https://metasyn.srht.site/learn-orca/";
+          }
+        }, 1000);
+      });
+    </script>
   </body>
 </html>
